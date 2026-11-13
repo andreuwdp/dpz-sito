@@ -53,20 +53,25 @@ function contactForm() {
     note.className = 'form-note'
     note.textContent = 'Invio in corso…'
     btn.disabled = true
+    const fd = new FormData(dpzForm)
+    const payload = { name: fd.get('name'), email: fd.get('email'), phone: fd.get('phone'), message: fd.get('message'), botcheck: fd.get('botcheck') ? '1' : '', page: location.pathname.split('/').pop() || 'index.html' }
+    // 1) richiesta nel gestionale + email automatica a chi scrive  2) avviso a te via Web3Forms (come prima)
+    const toHub = cfg.supabaseUrl
+      ? fetch(`${cfg.supabaseUrl}/functions/v1/site-form`, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey }, body: JSON.stringify(payload) })
+        .then(async (r) => ({ ok: r.ok, data: await r.json().catch(() => ({})) })).catch(() => ({ ok: false, data: {} }))
+      : Promise.resolve({ ok: false, data: {} })
+    const toMail = fetch(dpzForm.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+      .then(async (r) => ({ ok: r.ok, data: await r.json().catch(() => ({})) })).catch(() => ({ ok: false, data: {} }))
     try {
-      const res = await fetch(dpzForm.action, { method: 'POST', body: new FormData(dpzForm), headers: { Accept: 'application/json' } })
-      const data = await res.json()
-      if (res.ok && data.success) {
+      const [hub, mail] = await Promise.all([toHub, toMail])
+      if (hub.ok || (mail.ok && mail.data.success)) {
         note.className = 'form-note ok'
         note.textContent = 'Richiesta inviata! Ti ricontattiamo entro 24 ore.'
         dpzForm.reset()
       } else {
         note.className = 'form-note err'
-        note.textContent = (data && data.message) ? data.message : "Errore nell'invio. Riprova o scrivici su WhatsApp."
+        note.textContent = hub.data.error || mail.data.message || "Errore nell'invio. Riprova o scrivici su WhatsApp."
       }
-    } catch {
-      note.className = 'form-note err'
-      note.textContent = 'Connessione assente. Riprova o scrivici su WhatsApp.'
     } finally {
       btn.disabled = false
       setTimeout(() => { if (note.classList.contains('ok')) { note.className = 'form-note'; note.textContent = defaultNote } }, 9000)
