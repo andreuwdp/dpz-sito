@@ -1,0 +1,1338 @@
+{
+ "global": {
+  "logo": "assets/logo.png",
+  "logo_alt": "DPZMarketing",
+  "theme_color": "#06271d",
+  "contacts": {
+   "phone": "+39 393 411 2385",
+   "whatsapp": "393934112385",
+   "email": "info@dpzdigitalstudio.com"
+  },
+  "form": {
+   "access_key": "edd1af4f-c2bd-4e69-98b4-d1b6201cb590",
+   "subject": "Nuova richiesta dal sito DPZ",
+   "from_name": "Sito DPZ"
+  },
+  "menu": {
+   "eyebrow": "DPZ · Menu",
+   "home": "Home",
+   "book": {
+    "label": "Prenota una consulenza",
+    "href": "index.html#contatti",
+    "arrow": "↗"
+   }
+  }
+ },
+ "home": {
+  "seo": {
+   "title": "DPZMarketing — Strategia, creatività e tecnologia",
+   "description": "DPZMarketing: strategia, creatività e tecnologia per costruire ecosistemi digitali orientati alla crescita."
+  },
+  "nav": {
+   "links": [
+    {
+     "label": "Servizi",
+     "href": "#servizi"
+    },
+    {
+     "label": "Ecosistema",
+     "href": "#ecosistema"
+    },
+    {
+     "label": "Metodo",
+     "href": "#metodo"
+    },
+    {
+     "label": "Risultati",
+     "href": "#numeri"
+    }
+   ],
+   "cta": {
+    "label": "Parliamo del tuo progetto",
+    "href": "#contatti",
+    "arrow": "↗"
+   }
+  },
+  "hero": {
+   "eyebrow": "Strategia · Creatività · Tecnologia",
+   "title": "Costruiamo sistemi digitali che fanno <em>crescere</em> le aziende.",
+   "text": "Idee che diventano presenza. Presenza che diventa crescita. Uniamo branding, contenuti, advertising, web e automazioni in un unico ecosistema.",
+   "cta1": {
+    "label": "Prenota una consulenza",
+    "href": "#contatti",
+    "arrow": "↗"
+   },
+   "cta2": {
+    "label": "Scopri l’ecosistema",
+    "href": "#ecosistema",
+    "arrow": "↓"
+   },
+   "avatars": [
+    "DP",
+    "AI",
+    "+"
+   ],
+   "trust": "Soluzioni costruite intorno alla tua azienda",
+   "orbits": [
+    "CONTENT",
+    "ADV",
+    "AI"
+   ],
+   "sphere_title": "DPZ",
+   "sphere_sub": "ECOSYSTEM",
+   "card_top_small": "SISTEMA",
+   "card_top_value": "ONLINE",
+   "card_bottom_small": "CRESCITA",
+   "card_bottom_value": "+",
+   "card_bottom_icon": "⌁",
+   "scroll_hint": "SCOPRI IL SISTEMA",
+   "visual_label": "Ecosistema digitale DPZMarketing"
+  },
+  "values": {
+   "kicker": "PERCHÉ DPZMARKETING",
+   "title": "Competenze diverse.<br><em>Un’unica direzione.</em>",
+   "text": "Non vendiamo singoli strumenti scollegati. Costruiamo un sistema coerente, progettato intorno agli obiettivi reali della tua azienda.",
+   "items": [
+    {
+     "num": "01",
+     "icon": "↗",
+     "title": "Strategia",
+     "text": "Ogni scelta nasce da obiettivi concreti, dati e una direzione precisa."
+    },
+    {
+     "num": "02",
+     "icon": "◇",
+     "title": "Design",
+     "text": "Esperienze essenziali, riconoscibili e progettate per convertire."
+    },
+    {
+     "num": "03",
+     "icon": "✦",
+     "title": "Tecnologia",
+     "text": "AI, automazioni e software trasformano le idee in sistemi efficienti."
+    },
+    {
+     "num": "04",
+     "icon": "⌁",
+     "title": "Crescita",
+     "text": "Non inseguiamo i like. Costruiamo risultati misurabili e duraturi."
+    }
+   ]
+  },
+  "services": {
+   "kicker": "COSA POSSIAMO COSTRUIRE INSIEME",
+   "title": "Un solo partner.<br><em>Tutto ciò che serve per crescere.</em>",
+   "text": "Dalla comunicazione alla tecnologia: integriamo ogni competenza in un sistema costruito intorno alla tua azienda.",
+   "link": {
+    "label": "Parliamo del tuo progetto",
+    "href": "#contatti",
+    "arrow": "↗"
+   }
+  },
+  "ecosystem": {
+   "kicker": "IL TUO ECOSISTEMA DIGITALE",
+   "title": "Tutto connesso.<br><em>Tutto orientato alla crescita.</em>",
+   "text": "Il brand attira. I contenuti raccontano. Il sito converte. Le automazioni organizzano. I dati ci indicano dove crescere.",
+   "link": {
+    "label": "Costruiamo il tuo ecosistema",
+    "href": "#contatti",
+    "arrow": "↗"
+   },
+   "center_logo": "assets/logo-ecosistema.png",
+   "center_label": "DPZ<br>ECOSYSTEM",
+   "nodes": [
+    {
+     "icon": "◎",
+     "label": "Brand<br>Identity"
+    },
+    {
+     "icon": "◫",
+     "label": "Social &<br>Content"
+    },
+    {
+     "icon": "↗",
+     "label": "Advertising"
+    },
+    {
+     "icon": "⌘",
+     "label": "Website"
+    },
+    {
+     "icon": "✦",
+     "label": "AI &<br>Automation"
+    },
+    {
+     "icon": "▥",
+     "label": "Business<br>Software"
+    }
+   ]
+  },
+  "method": {
+   "kicker": "IL NOSTRO METODO",
+   "title": "Dalla complessità<br>a un sistema <em>chiaro.</em>",
+   "text": "Un processo trasparente, dall’idea alla crescita.",
+   "steps": [
+    {
+     "num": "01",
+     "title": "Analisi",
+     "text": "Ascoltiamo, studiamo il mercato e troviamo le opportunità."
+    },
+    {
+     "num": "02",
+     "title": "Strategia",
+     "text": "Definiamo obiettivi, priorità e il percorso più efficace."
+    },
+    {
+     "num": "03",
+     "title": "Design",
+     "text": "Diamo forma a identità, messaggi ed esperienza digitale."
+    },
+    {
+     "num": "04",
+     "title": "Sviluppo",
+     "text": "Costruiamo contenuti, campagne, siti e automazioni."
+    },
+    {
+     "num": "05",
+     "title": "Lancio",
+     "text": "Portiamo il sistema online con una regia coordinata."
+    },
+    {
+     "num": "06",
+     "title": "Ottimizzazione",
+     "text": "Misuriamo, impariamo e miglioriamo continuamente."
+    }
+   ]
+  },
+  "numbers": {
+   "kicker": "IL VALORE DI UN SISTEMA INTEGRATO",
+   "title": "I numeri parlano<br><em>di noi.</em>",
+   "text": "Ogni elemento è progettato per lavorare con gli altri. Il risultato è un sistema più veloce, coerente e misurabile.",
+   "stats": [
+    {
+     "value": "8+",
+     "label": "Competenze integrate"
+    },
+    {
+     "value": "360°",
+     "label": "Visione del progetto"
+    },
+    {
+     "value": "24/7",
+     "label": "Sistemi sempre attivi"
+    },
+    {
+     "value": "100%",
+     "label": "Soluzioni su misura"
+    }
+   ]
+  },
+  "wow": {
+   "kicker": "OLTRE LA SINGOLA SOLUZIONE",
+   "title": "Non ti serve “più marketing”.<br>Ti serve un sistema che <em>funziona.</em>",
+   "text": "DPZMarketing unisce creatività e tecnologia per trasformare punti scollegati in una crescita coordinata.",
+   "button": {
+    "label": "Costruisci il tuo progetto",
+    "href": "#contatti",
+    "arrow": "↗"
+   },
+   "panel_title": "DPZ CONTROL CENTER",
+   "panel_status": "LIVE SYSTEM",
+   "metric_label": "ECOSISTEMA",
+   "metric_value": "Attivo",
+   "metric_delta": "+12.8%",
+   "bars": [
+    48,
+    72,
+    55,
+    88,
+    64,
+    96,
+    78,
+    100
+   ],
+   "tags": [
+    "CONTENT ✓",
+    "ADV ✓",
+    "AUTOMATION ✓"
+   ]
+  },
+  "contact": {
+   "kicker": "IL PROSSIMO PASSO",
+   "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+   "lead": "Scegli il canale che preferisci: ti rispondiamo entro 24 ore.",
+   "wa_label": "WhatsApp",
+   "wa_note": "risposta rapida",
+   "call_label": "Chiamaci",
+   "mail_label": "Email",
+   "form_title": "Raccontaci il tuo progetto",
+   "form_fields": {
+    "name": {
+     "label": "Nome",
+     "placeholder": "Il tuo nome"
+    },
+    "email": {
+     "label": "Email",
+     "placeholder": "La tua email"
+    },
+    "phone": {
+     "label": "Telefono",
+     "placeholder": "Il tuo numero"
+    },
+    "msg": {
+     "label": "Messaggio",
+     "placeholder": "Di cosa hai bisogno?"
+    }
+   },
+   "form_optional": "(facoltativo)",
+   "form_button": "Invia richiesta",
+   "form_note": "Ti rispondiamo entro 24 ore. Niente spam."
+  },
+  "footer": {
+   "tagline": "Strategia. Creatività. Tecnologia.",
+   "copyright": "© 2026 DPZMarketing"
+  }
+ },
+ "services": [
+  {
+   "slug": "01-gestione-social",
+   "num": "01",
+   "menu_label": "Gestione social",
+   "card": {
+    "tag": "SOCIAL",
+    "icon": "◎",
+    "featured": true,
+    "title": "Gestione social",
+    "text": "Strategia editoriale, pubblicazione e gestione coordinata di Instagram, TikTok e Facebook."
+   },
+   "seo": {
+    "title": "Gestione social | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Gestione social",
+   "hero_text": "Non pubblichiamo per riempire un feed. Costruiamo una presenza che crea attenzione, fiducia e opportunità.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "◎",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Gestiamo Instagram, TikTok e Facebook come parti di un unico sistema: strategia, contenuti, pubblicazione e analisi lavorano insieme per rendere il brand riconoscibile e avvicinare le persone all’acquisto.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Pubblicare senza una direzione produce contenuti scollegati, risultati difficili da leggere e un’immagine poco coerente."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Partiamo dal posizionamento e dagli obiettivi. Definiamo rubriche, tono di voce, formati e calendario, poi misuriamo ciò che genera attenzione e conversioni."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Analisi del brand e dei competitor",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Strategia editoriale e rubriche",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Piano e calendario dei contenuti",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Copywriting e pubblicazione",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Gestione della community",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Report e ottimizzazione",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Analisi"
+     },
+     {
+      "num": "02",
+      "title": "Strategia"
+     },
+     {
+      "num": "03",
+      "title": "Produzione"
+     },
+     {
+      "num": "04",
+      "title": "Pubblicazione"
+     },
+     {
+      "num": "05",
+      "title": "Ottimizzazione"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per aziende, attività locali, professionisti ed e-commerce che vogliono trasformare i social in un vero canale di crescita.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Brand più riconoscibile"
+     },
+     {
+      "num": "02",
+      "title": "Comunicazione costante"
+     },
+     {
+      "num": "03",
+      "title": "Community più coinvolta"
+     },
+     {
+      "num": "04",
+      "title": "Più contatti qualificati"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "02-creazione-siti-web",
+   "num": "02",
+   "menu_label": "Creazione siti web",
+   "card": {
+    "tag": "WEB",
+    "icon": "⌘",
+    "featured": false,
+    "title": "Creazione siti web",
+    "text": "Siti vetrina ed e-commerce veloci, eleganti e progettati per trasformare visite in contatti e vendite."
+   },
+   "seo": {
+    "title": "Creazione siti web | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Creazione siti web",
+   "hero_text": "Un sito non deve solo essere bello. Deve far capire il tuo valore e portare l’utente al prossimo passo.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "⌘",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Progettiamo siti vetrina ed e-commerce veloci, chiari e responsive. Ogni pagina nasce da una strategia: gerarchia dei contenuti, esperienza utente, identità e conversione.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Un sito lento, confuso o poco credibile fa perdere opportunità prima ancora che il cliente contatti l’azienda."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Disegniamo un percorso semplice, con messaggi forti, navigazione intuitiva e call to action precise. Colleghiamo analytics, moduli, prenotazioni e strumenti commerciali."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Architettura e UX",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Web design personalizzato",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Sviluppo responsive",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "SEO tecnica di base",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Moduli e integrazioni",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Analytics e tracciamenti",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Brief"
+     },
+     {
+      "num": "02",
+      "title": "Struttura"
+     },
+     {
+      "num": "03",
+      "title": "Design"
+     },
+     {
+      "num": "04",
+      "title": "Sviluppo"
+     },
+     {
+      "num": "05",
+      "title": "Lancio"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per brand che devono presentarsi online, aziende che vogliono generare contatti ed e-commerce orientati alla vendita.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Più autorevolezza"
+     },
+     {
+      "num": "02",
+      "title": "Esperienza mobile efficace"
+     },
+     {
+      "num": "03",
+      "title": "Più richieste e vendite"
+     },
+     {
+      "num": "04",
+      "title": "Dati sulle conversioni"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "03-creazione-gestione-adv",
+   "num": "03",
+   "menu_label": "Creazione e gestione ADV",
+   "card": {
+    "tag": "PERFORMANCE",
+    "icon": "↗",
+    "featured": false,
+    "title": "Creazione e gestione ADV",
+    "text": "Campagne Meta, Instagram e TikTok Ads: dalla creatività all’ottimizzazione delle conversioni."
+   },
+   "seo": {
+    "title": "Creazione e gestione ADV | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Creazione e gestione ADV",
+   "hero_text": "Non compriamo semplicemente visibilità. Progettiamo campagne che accompagnano le persone verso un’azione.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "↗",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Gestiamo campagne Meta, Instagram e TikTok Ads dalla strategia alla creatività, fino all’analisi. L’obiettivo è trasformare il budget in dati, contatti e vendite misurabili.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Sponsorizzare senza funnel, tracciamento e creatività dedicate significa spendere senza capire cosa genera davvero risultati."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Definiamo pubblico, offerta, messaggio e percorso. Testiamo creatività e audience, leggiamo i dati e spostiamo il budget sulle combinazioni più efficaci."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Strategia media e funnel",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Setup account e tracciamenti",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Creatività foto e video",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Copy degli annunci",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Test di target e campagne",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Ottimizzazione e report",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Obiettivo"
+     },
+     {
+      "num": "02",
+      "title": "Setup"
+     },
+     {
+      "num": "03",
+      "title": "Creatività"
+     },
+     {
+      "num": "04",
+      "title": "Test"
+     },
+     {
+      "num": "05",
+      "title": "Scala"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per attività che vogliono acquisire clienti, lanciare un’offerta, riempire appuntamenti o aumentare le vendite online.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Budget più controllato"
+     },
+     {
+      "num": "02",
+      "title": "Lead più qualificati"
+     },
+     {
+      "num": "03",
+      "title": "Costo per risultato leggibile"
+     },
+     {
+      "num": "04",
+      "title": "Campagne migliorabili nel tempo"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "04-gestionali-aziendali",
+   "num": "04",
+   "menu_label": "Gestionali aziendali",
+   "card": {
+    "tag": "SOFTWARE",
+    "icon": "▥",
+    "featured": true,
+    "title": "Gestionali aziendali",
+    "text": "Software e dashboard su misura per organizzare clienti, attività, dati e processi interni."
+   },
+   "seo": {
+    "title": "Gestionali aziendali | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Gestionali aziendali",
+   "hero_text": "Trasformiamo procedure sparse e fogli scollegati in uno strumento costruito intorno al tuo modo di lavorare.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "▥",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Creiamo CRM, dashboard e gestionali su misura per centralizzare clienti, attività, documenti e dati. La tecnologia diventa semplice perché segue i processi reali dell’azienda.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Informazioni distribuite tra chat, fogli e software diversi rallentano il lavoro, aumentano gli errori e rendono difficile controllare l’azienda."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Mappiamo il flusso operativo, eliminiamo i passaggi inutili e costruiamo un ambiente unico con ruoli, automazioni, notifiche e report."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Analisi dei processi",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "UX e interfaccia su misura",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "CRM e gestione clienti",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Dashboard e report",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Ruoli e permessi",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Automazioni e integrazioni",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Mappatura"
+     },
+     {
+      "num": "02",
+      "title": "Prototipo"
+     },
+     {
+      "num": "03",
+      "title": "Sviluppo"
+     },
+     {
+      "num": "04",
+      "title": "Test"
+     },
+     {
+      "num": "05",
+      "title": "Evoluzione"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per aziende con procedure ripetitive, molti clienti o dati dispersi che necessitano di uno strumento realmente personalizzato.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Meno lavoro manuale"
+     },
+     {
+      "num": "02",
+      "title": "Dati centralizzati"
+     },
+     {
+      "num": "03",
+      "title": "Più controllo operativo"
+     },
+     {
+      "num": "04",
+      "title": "Processi scalabili"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "05-foto-video-contenuti",
+   "num": "05",
+   "menu_label": "Foto, video e contenuti",
+   "card": {
+    "tag": "CONTENT STUDIO",
+    "icon": "◫",
+    "featured": false,
+    "title": "Foto, video e contenuti",
+    "text": "Produzioni visive, reel, shooting e contenuti pensati per valorizzare il brand e fermare lo scroll."
+   },
+   "seo": {
+    "title": "Foto, video e contenuti | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Foto, video e contenuti",
+   "hero_text": "Creiamo contenuti che catturano l’attenzione, raccontano il valore e rendono il brand riconoscibile.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "◫",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Dallo script alla produzione, realizziamo foto, reel e video pensati per funzionare nei diversi punti del sistema: social, sito, campagne e lancio di prodotti.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Contenuti belli ma senza messaggio non costruiscono percezione e raramente portano l’utente a compiere un’azione."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Uniamo concept creativo, linguaggio del brand e obiettivo commerciale. Ogni contenuto nasce con un ruolo preciso nel percorso del cliente."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Concept e direzione creativa",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Script e storyboard",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Shooting foto e video",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Montaggio e color",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Formati per social e ADV",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Archivio contenuti coordinato",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Concept"
+     },
+     {
+      "num": "02",
+      "title": "Script"
+     },
+     {
+      "num": "03",
+      "title": "Produzione"
+     },
+     {
+      "num": "04",
+      "title": "Editing"
+     },
+     {
+      "num": "05",
+      "title": "Distribuzione"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per brand che vogliono elevare la propria immagine e disporre di contenuti efficaci per social, web e pubblicità.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Immagine più premium"
+     },
+     {
+      "num": "02",
+      "title": "Più attenzione"
+     },
+     {
+      "num": "03",
+      "title": "Materiale coerente"
+     },
+     {
+      "num": "04",
+      "title": "Creatività riutilizzabili"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "06-branding",
+   "num": "06",
+   "menu_label": "Branding",
+   "card": {
+    "tag": "IDENTITY",
+    "icon": "◇",
+    "featured": false,
+    "title": "Branding",
+    "text": "Identità visiva, posizionamento e linguaggio per rendere il brand riconoscibile e coerente."
+   },
+   "seo": {
+    "title": "Branding | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Branding",
+   "hero_text": "Diamo al brand un’identità chiara, coerente e abbastanza forte da essere ricordata.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "◇",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Costruiamo posizionamento, identità visiva e tono di voce per allineare il modo in cui l’azienda è, comunica e viene percepita.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Un’identità generica o incoerente rende il brand intercambiabile e indebolisce ogni investimento in contenuti e advertising."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Partiamo da valori, pubblico e differenze reali. Traduciamo la strategia in logo, colori, tipografia, linguaggio e regole applicabili."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Analisi e posizionamento",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Naming e messaggi chiave",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Logo e sistema visivo",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Palette e tipografia",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Tone of voice",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Brand guidelines",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Scoperta"
+     },
+     {
+      "num": "02",
+      "title": "Direzione"
+     },
+     {
+      "num": "03",
+      "title": "Identità"
+     },
+     {
+      "num": "04",
+      "title": "Sistema"
+     },
+     {
+      "num": "05",
+      "title": "Applicazione"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per nuove attività, aziende in evoluzione e brand che hanno bisogno di riposizionarsi o rendere coerente la propria immagine.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Brand riconoscibile"
+     },
+     {
+      "num": "02",
+      "title": "Comunicazione coerente"
+     },
+     {
+      "num": "03",
+      "title": "Percezione più autorevole"
+     },
+     {
+      "num": "04",
+      "title": "Materiali facili da produrre"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "07-automazioni-chatbot",
+   "num": "07",
+   "menu_label": "Automazioni e chatbot",
+   "card": {
+    "tag": "AUTOMATION",
+    "icon": "✦",
+    "featured": false,
+    "title": "Automazioni e chatbot",
+    "text": "Flussi automatici, chatbot e CRM per acquisire lead, rispondere e lavorare in modo più efficiente."
+   },
+   "seo": {
+    "title": "Automazioni e chatbot | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Automazioni e chatbot",
+   "hero_text": "Facciamo lavorare insieme strumenti e informazioni, così il tuo team può concentrarsi sulle attività che contano.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "✦",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Progettiamo chatbot, automazioni e flussi CRM per acquisire lead, rispondere rapidamente, organizzare dati e ridurre le operazioni manuali.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Richieste perse, risposte lente e attività ripetitive consumano tempo e fanno disperdere opportunità commerciali."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Colleghiamo canali e software in flussi automatici controllabili: dalla prima richiesta alla notifica, dal follow-up alla reportistica."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Mappatura dei flussi",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Chatbot e assistenti AI",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Lead routing e notifiche",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Follow-up automatici",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Integrazione CRM",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "Controllo e ottimizzazione",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Flusso"
+     },
+     {
+      "num": "02",
+      "title": "Logica"
+     },
+     {
+      "num": "03",
+      "title": "Integrazione"
+     },
+     {
+      "num": "04",
+      "title": "Test"
+     },
+     {
+      "num": "05",
+      "title": "Controllo"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per aziende che ricevono molte richieste, gestiscono appuntamenti o vogliono automatizzare passaggi commerciali e operativi.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Tempi di risposta ridotti"
+     },
+     {
+      "num": "02",
+      "title": "Meno attività ripetitive"
+     },
+     {
+      "num": "03",
+      "title": "Lead gestiti meglio"
+     },
+     {
+      "num": "04",
+      "title": "Processi sempre attivi"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  },
+  {
+   "slug": "08-consulenza-marketing",
+   "num": "08",
+   "menu_label": "Consulenza marketing",
+   "card": {
+    "tag": "STRATEGY",
+    "icon": "⌁",
+    "featured": false,
+    "title": "Consulenza marketing",
+    "text": "Analisi, strategia e piano d’azione per trasformare obiettivi aziendali in priorità concrete."
+   },
+   "seo": {
+    "title": "Consulenza marketing | DPZMarketing",
+    "description": ""
+   },
+   "nav_cta": "Parliamo del progetto ↗",
+   "title": "Consulenza marketing",
+   "hero_text": "Mettiamo ordine tra idee, canali e obiettivi per trasformare il marketing in un piano d’azione concreto.",
+   "hero_cta": {
+    "label": "Prenota una consulenza ↗",
+    "href": "#contatti"
+   },
+   "icon": "⌁",
+   "intro_kicker": "IL SERVIZIO",
+   "intro": "Analizziamo il punto di partenza, individuiamo opportunità e priorità e definiamo una strategia sostenibile per risorse, mercato e obiettivi.",
+   "problem": {
+    "label": "01 / IL PROBLEMA",
+    "title": "Quando gli strumenti<br>non hanno una direzione.",
+    "text": "Senza una direzione, le attività si accumulano, il budget si frammenta e diventa difficile capire cosa fare prima."
+   },
+   "solution": {
+    "label": "02 / LA SOLUZIONE",
+    "title": "Un sistema progettato<br>intorno all’obiettivo.",
+    "text": "Costruiamo una mappa semplice: obiettivi, pubblico, offerta, canali, contenuti, KPI e prossime azioni. Tutto deve essere applicabile."
+   },
+   "includes": {
+    "kicker": "COSA COMPRENDE",
+    "title": "Tutto ciò che serve.<br><em>Niente di superfluo.</em>",
+    "items": [
+     {
+      "num": "01",
+      "text": "Audit del marketing attuale",
+      "icon": "↗"
+     },
+     {
+      "num": "02",
+      "text": "Analisi competitor",
+      "icon": "↗"
+     },
+     {
+      "num": "03",
+      "text": "Target e posizionamento",
+      "icon": "↗"
+     },
+     {
+      "num": "04",
+      "text": "Strategia e funnel",
+      "icon": "↗"
+     },
+     {
+      "num": "05",
+      "text": "Piano operativo",
+      "icon": "↗"
+     },
+     {
+      "num": "06",
+      "text": "KPI e misurazione",
+      "icon": "↗"
+     }
+    ]
+   },
+   "process": {
+    "kicker": "COME LAVORIAMO",
+    "title": "Un processo chiaro,<br>dall’idea al <em>risultato.</em>",
+    "steps": [
+     {
+      "num": "01",
+      "title": "Audit"
+     },
+     {
+      "num": "02",
+      "title": "Diagnosi"
+     },
+     {
+      "num": "03",
+      "title": "Priorità"
+     },
+     {
+      "num": "04",
+      "title": "Piano"
+     },
+     {
+      "num": "05",
+      "title": "Affiancamento"
+     }
+    ]
+   },
+   "outcomes": {
+    "kicker": "IL RISULTATO",
+    "title": "Un servizio che lavora<br>per la tua <em>crescita.</em>",
+    "text": "Per imprenditori e aziende che vogliono capire come crescere prima di investire in singole attività operative.",
+    "cards": [
+     {
+      "num": "01",
+      "title": "Priorità più chiare"
+     },
+     {
+      "num": "02",
+      "title": "Budget meglio allocato"
+     },
+     {
+      "num": "03",
+      "title": "Team allineato"
+     },
+     {
+      "num": "04",
+      "title": "Azioni misurabili"
+     }
+    ]
+   },
+   "contact": {
+    "kicker": "IL PROSSIMO PASSO",
+    "title": "Trasformiamo la tua idea<br>in un sistema di crescita.",
+    "button": {
+     "label": "Parliamone ↗",
+     "href": ""
+    }
+   },
+   "footer": "© 2026 DPZMarketing"
+  }
+ ]
+}
