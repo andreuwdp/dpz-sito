@@ -1,10 +1,11 @@
 // Modalità modifica: gira dentro l'anteprima del gestionale (iframe) e parla con lui via postMessage.
+import { rich } from './render.js'
 // Non salva niente da sola: manda le modifiche al gestionale, che le tiene in bozza e le pubblica su Supabase.
 
 let parentOrigin = null
 const send = (msg) => parentOrigin && window.parent.postMessage({ ...msg, source: 'dpz-site' }, parentOrigin)
 
-const CSS = `
+const EDITOR_CSS = `
 [data-k]{outline:1px dashed transparent;outline-offset:3px;border-radius:3px;cursor:text;transition:outline-color .15s}
 [data-k]:hover{outline-color:rgba(10,155,104,.55)}
 [data-k]:focus{outline:2px solid #0a9b68;outline-offset:3px}
@@ -17,6 +18,10 @@ const CSS = `
 #dpz-ed-bar button.danger:hover{background:#c0392b}
 #dpz-ed-bar i{width:1px;background:rgba(255,255,255,.2);margin:4px 2px}
 .contact-form input[data-k],.contact-form textarea[data-k]{cursor:pointer}
+[data-sec-hidden]{opacity:.32;position:relative}
+[data-sec-hidden]::after{content:"Nascosta sul sito";position:absolute;top:14px;right:14px;z-index:5;padding:6px 10px;border-radius:8px;background:#06271d;color:#fff;font:700 11px/1 Arial,sans-serif}
+.dpz-flash{animation:dpzFlash 1.4s ease}
+@keyframes dpzFlash{0%,100%{box-shadow:0 0 0 0 rgba(10,155,104,0)}25%,60%{box-shadow:0 0 0 4px rgba(10,155,104,.65)}}
 `
 
 let active = null // { anchor, item, link, img, panel, nav }
@@ -31,8 +36,9 @@ function findTarget(target) {
   const img = closestAttr(target, 'data-img')
   const panel = closestAttr(target, 'data-panel')
   const nav = target.closest ? target.closest('a[href$=".html"], a[href*=".html#"]') : null
-  const anchor = item || link || img || panel || nav
-  return anchor ? { anchor, item, link, img, panel, nav } : null
+  const toggle = closestAttr(target, 'data-toggle')
+  const anchor = item || link || img || panel || nav || toggle
+  return anchor ? { anchor, item, link, img, panel, nav, toggle } : null
 }
 
 function placeBar() {
@@ -64,6 +70,7 @@ function showBar(target) {
   if (t.link) b.push(['link', '🔗 Link'])
   if (t.img) b.push(['img', '🖼 Cambia immagine'])
   if (t.panel) b.push(['panel', '⚙ Impostazioni'])
+  if (t.toggle) b.push(['toggle', '★ In evidenza'])
   if (t.item) {
     if (b.length) b.push(['|'])
     b.push(['up', '↑'], ['down', '↓'], ['dup', '⧉ Duplica'], ['del', '✕ Elimina'])
@@ -80,7 +87,8 @@ function pageOf(href) {
 
 function act(a) {
   if (!active) return
-  const { item, link, img, panel, nav } = active
+  const { item, link, img, panel, nav, toggle } = active
+  if (a === 'toggle') send({ type: 'dpz:toggle', path: toggle.dataset.toggle })
   if (a === 'open') send({ type: 'dpz:nav', page: pageOf(nav.getAttribute('href')) })
   if (a === 'link') send({ type: 'dpz:link', path: link.dataset.href, href: link.getAttribute('href') })
   if (a === 'img') send({ type: 'dpz:image', path: img.dataset.img })
@@ -123,15 +131,37 @@ function makeEditable(root) {
   })
 }
 
+// elenco di testi, immagini e link della pagina, per le schede del pannello nel gestionale
+function report() {
+  const seen = new Set()
+  const fields = []
+  document.querySelectorAll('#dpz-site [data-k]').forEach((el) => {
+    const path = el.dataset.k
+    if (seen.has(path)) return
+    seen.add(path)
+    const t = el.dataset.t
+    fields.push({ path, type: t, value: t === 'placeholder' ? el.getAttribute('placeholder') : t === 'rich' ? cleanRich(el) : el.textContent, sec: el.closest('[data-sec]')?.dataset.sec ?? null })
+  })
+  const images = [...new Map([...document.querySelectorAll('#dpz-site [data-img]')].map((el) => [el.dataset.img, { path: el.dataset.img, src: el.getAttribute('src'), sec: el.closest('[data-sec]')?.dataset.sec ?? null }])).values()]
+  const links = [...new Map([...document.querySelectorAll('#dpz-site [data-href]')].map((el) => [el.dataset.href, { path: el.dataset.href, href: el.getAttribute('href'), label: el.textContent.trim().replace(/\s+/g, ' ') }])).values()]
+  send({ type: 'dpz:fields', fields, images, links })
+}
+
+function flash(el) {
+  if (!el) return
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  el.classList.remove('dpz-flash'); void el.offsetWidth; el.classList.add('dpz-flash')
+}
+
 export function start({ draw, getPage, origins }) {
-  const style = document.createElement('style'); style.textContent = CSS; document.head.appendChild(style)
+  const style = document.createElement('style'); style.textContent = EDITOR_CSS; document.head.appendChild(style)
   bar = document.createElement('div'); bar.id = 'dpz-ed-bar'; document.documentElement.appendChild(bar)
   bar.addEventListener('mousedown', (e) => e.preventDefault())
   bar.addEventListener('mouseenter', () => clearTimeout(hideTimer))
   bar.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) act(b.dataset.act) })
 
   const site = document.getElementById('dpz-site')
-  const render = (c, page) => { hideBar(); const y = window.scrollY; draw(c, page, { edit: true }); makeEditable(site); if (page === getPage()) window.scrollTo(0, y) }
+  const render = (c, page) => { hideBar(); const same = page === getPage(); const y = window.scrollY; draw(c, page, { edit: true }); makeEditable(site); if (same) window.scrollTo(0, y); report() }
 
   window.addEventListener('message', (e) => {
     const m = e.data
@@ -139,6 +169,16 @@ export function start({ draw, getPage, origins }) {
     if (origins.length && !origins.includes(e.origin) && !/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(e.origin)) return
     parentOrigin = e.origin
     if (m.type === 'dpz:load') { const same = m.page === getPage(); render(m.content, m.page); if (!same) window.scrollTo(0, 0) }
+    if (m.type === 'dpz:patch') {
+      document.querySelectorAll(`[data-k="${CSS.escape(m.path)}"]`).forEach((el) => {
+        if (el === document.activeElement && document.hasFocus()) return
+        if (el.dataset.t === 'placeholder') el.setAttribute('placeholder', m.value)
+        else if (el.dataset.t === 'rich') el.innerHTML = rich(m.value)
+        else el.textContent = m.value
+      })
+    }
+    if (m.type === 'dpz:focus') flash(document.querySelector(`[data-k="${CSS.escape(m.path)}"], [data-img="${CSS.escape(m.path)}"], [data-href="${CSS.escape(m.path)}"]`))
+    if (m.type === 'dpz:showSec') flash(document.querySelector(`[data-sec="${Number(m.n)}"]`))
     if (m.type === 'dpz:scrollTo') document.querySelector(m.selector)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   })
 
@@ -148,6 +188,8 @@ export function start({ draw, getPage, origins }) {
     if (a && !a.closest('#dpz-ed-bar') && !a.matches('.dpz-burger')) e.preventDefault()
     const ph = e.target.closest('[data-t="placeholder"]')
     if (ph) send({ type: 'dpz:ask', path: ph.dataset.k, value: ph.getAttribute('placeholder'), label: 'Testo di esempio del campo' })
+    const kEl = e.target.closest('[data-k]')
+    if (kEl) send({ type: 'dpz:picked', path: kEl.dataset.k })
     const im = e.target.closest('[data-img]')
     if (im) send({ type: 'dpz:image', path: im.dataset.img })
     showBar(e.target)

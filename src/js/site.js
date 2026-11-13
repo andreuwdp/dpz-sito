@@ -1,5 +1,5 @@
 // Comportamenti del sito + contenuti dal vivo + modalità modifica (dentro l'editor del gestionale).
-import { renderBody, pageMeta } from './render.js'
+import { renderBody, pageMeta, themeCss, googleFontsUrl, faviconOf } from './render.js'
 
 const cfg = window.DPZ || {}
 let current = cfg.page
@@ -91,9 +91,32 @@ function setCss(page) {
   if (link && !link.href.endsWith(want.replace(/^\.?\//, ''))) link.setAttribute('href', want)
 }
 
+// colori, font e favicon scelti nel gestionale
+function setLook(c) {
+  let st = document.getElementById('dpz-theme')
+  if (!st) { st = document.createElement('style'); st.id = 'dpz-theme'; document.head.appendChild(st) }
+  const css = themeCss(c)
+  if (st.textContent !== css) st.textContent = css
+  const url = googleFontsUrl(c)
+  let fl = document.getElementById('dpz-fonts')
+  if (url) {
+    if (!fl) { fl = document.createElement('link'); fl.id = 'dpz-fonts'; fl.rel = 'stylesheet'; document.head.insertBefore(fl, document.getElementById('page-css')) }
+    if (fl.getAttribute('href') !== url) fl.setAttribute('href', url)
+  } else if (fl) fl.remove()
+  const fav = faviconOf(c)
+  for (const rel of ['icon', 'apple-touch-icon']) {
+    let l = document.querySelector(`link[rel="${rel}"]`)
+    if (fav) {
+      if (!l) { l = document.createElement('link'); l.rel = rel; document.head.appendChild(l) }
+      if (l.getAttribute('href') !== fav) l.setAttribute('href', fav)
+    } else if (l) l.remove()
+  }
+}
+
 export function draw(c, page, opts = {}) {
   content = c; current = page
   setCss(page)
+  setLook(c)
   document.getElementById('dpz-site').innerHTML = renderBody(c, page, opts)
   setMeta(c, page)
   behaviors(page, opts)
