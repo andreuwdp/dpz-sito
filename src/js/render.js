@@ -1,4 +1,4 @@
-// Motore del sito DPZMarketing: costruisce l'HTML delle pagine a partire dai contenuti (content.json / Supabase).
+// Motore del sito Dpzdigital: costruisce l'HTML delle pagine a partire dai contenuti (content.json / Supabase).
 // Lo stesso file gira nel build (Node) e nel browser (aggiornamenti dal vivo e modalità modifica del gestionale).
 // In modalità modifica (opts.edit) aggiunge gli attributi data-* che l'editor usa per sapere cosa si può cambiare.
 
@@ -59,7 +59,9 @@ function sectionsHtml(c, page, S, h, opts) {
   const base = sectionsPath(c, page)
   return list.map((sec, n) => {
     if (sec.hidden && !opts.edit) return ''
-    const html = S[sec.type] ? S[sec.type]() : BLOCKS[sec.type] ? BLOCKS[sec.type].render(sec.data || {}, `${base}.${n}.data`, h) : ''
+    let html = S[sec.type] ? S[sec.type]() : BLOCKS[sec.type] ? BLOCKS[sec.type].render(sec.data || {}, `${base}.${n}.data`, h) : ''
+    const anchor = String(sec.data?.anchor || '').replace(/[^a-z0-9-]/gi, '')
+    if (anchor && html) html = html.replace(/^<(\w+)/, `<$1 id="${anchor}"`)
     if (!opts.edit || !html) return html
     // in modifica: ogni sezione sa chi è (per evidenziarla e scorrere fin lì dal pannello)
     return html.replace(/^<(\w+)/, `<$1 data-sec="${n}"${sec.hidden ? ' data-sec-hidden' : ''}`)
@@ -161,7 +163,7 @@ export function renderHome(c, opts = {}) {
       + `<a class="contact-method" href="mailto:${esc(co.email)}"${h.panel('contacts')}><span class="cm-ico">&#9993;</span><span class="cm-txt">${h.w('home.contact.mail_label', ct.mail_label)}<small>${esc(co.email)}</small></span></a></div></div>`
       + `<form class="contact-form" id="dpzForm" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="${esc(g.form.access_key)}"><input type="hidden" name="subject" value="${esc(g.form.subject)}"><input type="hidden" name="from_name" value="${esc(g.form.from_name)}"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off"><h3${h.k('home.contact.form_title')}>${esc(ct.form_title)}</h3>${fieldE('name', 'text', 'name', true)}${fieldE('email', 'email', 'email', true)}${fieldE('phone', 'tel', 'phone', false)}${fieldE('msg', 'textarea', 'message', true)}<button class="button primary" type="submit">${h.w('home.contact.form_button', ct.form_button)} <span>&#8599;</span></button><p class="form-note" id="dpzFormNote"${h.k('home.contact.form_note')}>${esc(ct.form_note)}</p></form></div></section>`,
   }
-  return nav + sectionsHtml(c, 'home', S, h, opts) + `<footer><a class="brand footer-brand" href="#home">${logo('brand-logo footer-logo')}</a><p${h.k('home.footer.tagline')}>${esc(p.footer.tagline)}</p><span${h.k('home.footer.copyright')}>${esc(p.footer.copyright)}</span></footer></main>`
+  return nav + sectionsHtml(c, 'home', S, h, opts) + `<footer><a class="brand footer-brand" href="#home">${logo('brand-logo footer-logo')}</a><p${h.k('home.footer.tagline')}>${esc(p.footer.tagline)}</p><span>${h.w('home.footer.copyright', p.footer.copyright)}${legal(c, h)}</span></footer></main>`
 }
 
 export function renderService(c, i, opts = {}) {
@@ -179,16 +181,38 @@ export function renderService(c, i, opts = {}) {
     outcomes: () => `<section class="outcomes"><div class="heading reveal"><span class="kicker"${h.k(`${P}.outcomes.kicker`)}>${esc(s.outcomes.kicker)}</span><h2${h.k(`${P}.outcomes.title`, 'rich')}>${rich(s.outcomes.title)}</h2><p${h.k(`${P}.outcomes.text`)}>${esc(s.outcomes.text)}</p></div><div class="cards"${h.list(`${P}.outcomes.cards`)}>${s.outcomes.cards.map((x, j) => `<div class="card reveal"${h.item(`${P}.outcomes.cards`, j)}><span${h.k(`${P}.outcomes.cards.${j}.num`)}>${esc(x.num)}</span><b${h.k(`${P}.outcomes.cards.${j}.title`)}>${esc(x.title)}</b></div>`).join('')}</div></section>`,
     contact: () => `<section class="contact" id="contatti"><div><span class="kicker"${h.k(`${P}.contact.kicker`)}>${esc(s.contact.kicker)}</span><h2${h.k(`${P}.contact.title`, 'rich')}>${rich(s.contact.title)}</h2></div><a class="circle" href="${esc(s.contact.button.href || `mailto:${g.contacts.email}`)}"${h.href(`${P}.contact.button`)}${h.k(`${P}.contact.button.label`)}>${esc(s.contact.button.label)}</a></section>`,
   }
-  return nav + sectionsHtml(c, s.slug, S, h, opts) + `<footer>${logo}<span${h.k(`${P}.footer`)}>${esc(s.footer)}</span></footer>`
+  return nav + sectionsHtml(c, s.slug, S, h, opts) + `<footer>${logo}<span>${h.w(`${P}.footer`, s.footer)}${legal(c, h)}</span></footer>`
 }
 
 export const faviconOf = (c) => c.global.favicon || ''
+
+// Dati dell'attività in fondo a ogni pagina (obbligatori per legge sul sito di un'attività)
+function legal(c, h) {
+  const l = c.global.legal
+  return l ? `<small class="footer-legal"${h.k('global.legal')}>${esc(l)}</small>` : ''
+}
+
+// Dati strutturati per Google e per gli assistenti AI: chi è il titolare del sito
+export function orgJsonLd(c, url) {
+  const o = c.global.org || {}
+  const ld = {
+    '@context': 'https://schema.org', '@type': 'ProfessionalService',
+    name: c.global.logo_alt, url, email: c.global.contacts.email, telephone: c.global.contacts.phone,
+    description: c.home.seo.description,
+    ...(o.founder ? { founder: { '@type': 'Person', name: o.founder } } : {}),
+    ...(o.vat ? { vatID: o.vat } : {}),
+    ...(o.legal_name ? { legalName: o.legal_name } : {}),
+    ...(o.city ? { address: { '@type': 'PostalAddress', addressLocality: o.city, ...(o.region ? { addressRegion: o.region } : {}), addressCountry: 'IT' } } : {}),
+    ...(Array.isArray(o.same_as) && o.same_as.length ? { sameAs: o.same_as } : {}),
+  }
+  return JSON.stringify(ld).replace(/</g, '\\u003c')
+}
 
 // Titolo e descrizione della pagina (SEO)
 export function pageMeta(c, page) {
   if (page === 'home') return c.home.seo
   const s = c.services.find((x) => x.slug === page)
-  return s ? s.seo : { title: 'Pagina non trovata | DPZMarketing', description: '' }
+  return s ? s.seo : { title: 'Pagina non trovata | Dpzdigital', description: '' }
 }
 
 export function renderBody(c, page, opts = {}) {
@@ -239,6 +263,26 @@ export const BLOCKS = {
     label: 'Banner invito', icon: '➜', desc: 'Fascia con frase forte e bottone',
     defaults: () => ({ title: 'Pronto a far <em>crescere</em> il tuo brand?', text: 'Prenota una consulenza gratuita di 30 minuti.', button: { label: 'Prenota ora', href: '#contatti', arrow: '↗' } }),
     render: (d, P, h) => `<section class="blk blk-cta"><div class="blk-wrap blk-cta-box reveal"><div><h2${h.k(`${P}.title`, 'rich')}>${rich(d.title)}</h2><p${h.k(`${P}.text`)}>${esc(d.text)}</p></div>${blkBtn(h, `${P}.button`, d.button, 'blk-btn blk-btn-light')}</div></section>`,
+  },
+  cases: {
+    label: 'Casi studio', icon: '◎', desc: 'Progetti raccontati: sfida, cosa abbiamo fatto, risultato',
+    defaults: () => ({ anchor: 'casi-studio', kicker: 'CASI STUDIO', title: 'Problemi veri, <em>soluzioni concrete.</em>', text: 'Alcuni progetti seguiti per i nostri clienti. Per riservatezza non mostriamo i nomi.', items: [
+      { sector: 'Settore', title: 'Titolo del progetto', challenge: 'Qual era il problema di partenza.', solution: 'Cosa abbiamo costruito.', result: 'Cosa è cambiato per il cliente.', tags: ['Sito web', 'Social'] }], dark: false }),
+    render: (d, P, h) => `<section class="blk blk-cases${d.dark ? ' blk-dark' : ''}"><div class="blk-wrap"><div class="blk-head reveal">${head(d, P, h)}${d.text ? `<p${h.k(`${P}.text`)}>${esc(d.text)}</p>` : ''}</div><div class="blk-case-list"${h.list(`${P}.items`)}>${arr(d.items).map((x, j) => { const Q = `${P}.items.${j}`; return `<article class="blk-case reveal"${h.item(`${P}.items`, j)}><div class="blk-case-side"><span class="blk-case-num">${String(j + 1).padStart(2, '0')}</span><small${h.k(`${Q}.sector`)}>${esc(x.sector)}</small><h3${h.k(`${Q}.title`)}>${esc(x.title)}</h3><div class="blk-tags"${h.list(`${Q}.tags`)}>${arr(x.tags).map((g, z) => `<span${h.item(`${Q}.tags`, z)}${h.k(`${Q}.tags.${z}`)}>${esc(g)}</span>`).join('')}</div></div><dl class="blk-case-steps"><div><dt>La sfida</dt><dd${h.k(`${Q}.challenge`)}>${esc(x.challenge)}</dd></div><div><dt>Cosa abbiamo fatto</dt><dd${h.k(`${Q}.solution`)}>${esc(x.solution)}</dd></div><div><dt>Il risultato</dt><dd${h.k(`${Q}.result`)}>${esc(x.result)}</dd></div></dl></article>` }).join('')}</div></div></section>`,
+  },
+  showcase: {
+    label: 'Lavori / portfolio', icon: '▣', desc: 'Schede con schermata: siti, gestionali, esempi',
+    defaults: () => ({ anchor: 'lavori', kicker: 'LAVORI', title: 'Cosa possiamo <em>costruire.</em>', text: '', note: '', items: [1, 2, 3].map((n) => ({ image: IMG, badge: 'Esempio', sector: 'Settore', title: `Progetto ${n}`, text: 'Breve descrizione di cosa fa.', tags: ['Sito web'], link: { label: '', href: '' } })), dark: false }),
+    render: (d, P, h) => `<section class="blk blk-show${d.dark ? ' blk-dark' : ''}"><div class="blk-wrap"><div class="blk-head reveal">${head(d, P, h)}${d.text ? `<p${h.k(`${P}.text`)}>${esc(d.text)}</p>` : ''}</div><div class="blk-show-grid"${h.list(`${P}.items`)}>${arr(d.items).map((x, j) => { const Q = `${P}.items.${j}`; const real = /reale/i.test(x.badge || ''); const link = x.link && x.link.href && x.link.label; return `<article class="blk-work reveal"${h.item(`${P}.items`, j)}><div class="blk-work-shot"><i class="blk-work-bar"><b></b><b></b><b></b></i><img src="${esc(x.image || IMG)}" alt="${esc(x.title)}" loading="lazy"${h.img(`${Q}.image`)}><span class="blk-badge${real ? ' real' : ''}"${h.k(`${Q}.badge`)}>${esc(x.badge)}</span></div><div class="blk-work-copy"><small${h.k(`${Q}.sector`)}>${esc(x.sector)}</small><h3${h.k(`${Q}.title`)}>${esc(x.title)}</h3><p${h.k(`${Q}.text`)}>${esc(x.text)}</p><div class="blk-tags"${h.list(`${Q}.tags`)}>${arr(x.tags).map((g, z) => `<span${h.item(`${Q}.tags`, z)}${h.k(`${Q}.tags.${z}`)}>${esc(g)}</span>`).join('')}</div>${link || h.edit ? `<a class="blk-work-link" href="${esc(x.link?.href || '#')}"${/^https?:/.test(x.link?.href || '') ? ' target="_blank" rel="noopener"' : ''}${h.href(`${Q}.link`)}>${h.w(`${Q}.link.label`, x.link?.label || (h.edit ? 'Aggiungi link' : ''))} <span>↗</span></a>` : ''}</div></article>` }).join('')}</div>${d.note || h.edit ? `<p class="blk-note reveal"${h.k(`${P}.note`)}>${esc(d.note || '')}</p>` : ''}</div></section>`,
+  },
+  team: {
+    label: 'Team (ruoli)', icon: '◍', desc: 'Le competenze del team, con o senza nomi',
+    defaults: () => ({ anchor: 'team', kicker: 'IL TEAM', title: 'Le persone dietro <em>ogni progetto.</em>', text: 'Un gruppo di professionisti, un unico referente per te.', items: [
+      { icon: '↗', role: 'Strategia', text: 'Analisi, obiettivi e piano d’azione.' },
+      { icon: '⌘', role: 'Sviluppo', text: 'Siti, gestionali e automazioni.' },
+      { icon: '◫', role: 'Contenuti', text: 'Foto, video e testi per i social.' },
+      { icon: '◎', role: 'Advertising', text: 'Campagne e analisi dei risultati.' }], dark: false }),
+    render: (d, P, h) => `<section class="blk blk-team${d.dark ? ' blk-dark' : ''}"><div class="blk-wrap"><div class="blk-head reveal">${head(d, P, h)}${d.text ? `<p${h.k(`${P}.text`)}>${esc(d.text)}</p>` : ''}</div><div class="blk-roles"${h.list(`${P}.items`)}>${arr(d.items).map((x, j) => { const Q = `${P}.items.${j}`; return `<article class="blk-role reveal"${h.item(`${P}.items`, j)}><i${h.k(`${Q}.icon`)}>${esc(x.icon)}</i><h3${h.k(`${Q}.role`)}>${esc(x.role)}</h3><p${h.k(`${Q}.text`)}>${esc(x.text)}</p></article>` }).join('')}</div></div></section>`,
   },
   pricing: {
     label: 'Prezzi / pacchetti', icon: '€', desc: 'Pacchetti affiancati con prezzo e cosa include',

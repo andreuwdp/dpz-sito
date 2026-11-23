@@ -1,7 +1,7 @@
-// Build del sito DPZMarketing per Netlify: `node build.mjs` → cartella dist/
+// Build del sito Dpzdigital per Netlify: `node build.mjs` → cartella dist/
 // Prende i contenuti più recenti da Supabase (quelli salvati dal gestionale); se non raggiungibile usa src/content.json.
 import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises'
-import { renderBody, pageMeta, esc, themeCss, googleFontsUrl, faviconOf } from './src/js/render.js'
+import { renderBody, pageMeta, esc, themeCss, googleFontsUrl, faviconOf, orgJsonLd } from './src/js/render.js'
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://xktsduzplizvrktnnkba.supabase.co'
 // chiave pubblica (solo lettura grazie alle regole RLS): può stare nel sito
@@ -46,6 +46,7 @@ function page(slug, file) {
   const extra = [
     fav ? `<link rel="icon" href="${esc(fav)}">\n  <link rel="apple-touch-icon" href="${esc(fav)}">` : '',
     `<meta property="og:type" content="website">\n  <meta property="og:site_name" content="${esc(c.global.logo_alt)}">\n  <meta property="og:title" content="${esc(meta.title)}">${meta.description ? `\n  <meta property="og:description" content="${esc(meta.description)}">` : ''}\n  <meta property="og:url" content="${esc(url)}">${og ? `\n  <meta property="og:image" content="${esc(abs(og))}">` : ''}\n  <meta name="twitter:card" content="summary_large_image">`,
+    isHome ? `<script type="application/ld+json">${orgJsonLd(c, SITE)}</script>` : '',
     fonts ? `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n  <link rel="stylesheet" id="dpz-fonts" href="${esc(fonts)}">` : '',
   ].filter(Boolean).join('\n  ')
   return `<!doctype html>
@@ -69,6 +70,8 @@ function page(slug, file) {
 await rm('dist', { recursive: true, force: true })
 await mkdir('dist/assets', { recursive: true })
 await cp('src/assets', 'dist/assets', { recursive: true })
+// siti di esempio mostrati nella sezione Lavori (attività di fantasia, non indicizzati)
+await cp('src/esempi', 'dist/esempi', { recursive: true })
 for (const f of ['home.css', 'service.css', 'menu.css', 'blocks.css']) await cp(`src/css/${f}`, `dist/assets/${f}`)
 for (const f of ['site.js', 'render.js', 'editor.js']) await cp(`src/js/${f}`, `dist/assets/${f}`)
 

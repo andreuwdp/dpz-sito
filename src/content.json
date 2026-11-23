@@ -1,11 +1,11 @@
 {
  "global": {
-  "logo": "assets/logo.png",
-  "logo_alt": "DPZMarketing",
+  "logo": "assets/logo-dpzdigital.svg",
+  "logo_alt": "Dpzdigital",
   "theme_color": "#06271d",
   "contacts": {
-   "phone": "+39 393 411 2385",
-   "whatsapp": "393934112385",
+   "phone": "+39 392 358 4154",
+   "whatsapp": "393923584154",
    "email": "info@dpzdigital.com"
   },
   "form": {
@@ -21,12 +21,25 @@
     "href": "index.html#contatti",
     "arrow": "↗"
    }
+  },
+  "favicon": "assets/favicon.png",
+  "share_image": "assets/og.jpg",
+  "legal": "Dpzdigital di Alex Andreuw De Piazzi · Ditta individuale · P.IVA 02615920440 · Lapedona (FM)",
+  "org": {
+   "founder": "Alex Andreuw De Piazzi",
+   "legal_name": "Alex Andreuw De Piazzi",
+   "vat": "IT02615920440",
+   "city": "Lapedona",
+   "region": "FM",
+   "same_as": [
+    "https://www.instagram.com/_dpzdigital_/"
+   ]
   }
  },
  "home": {
   "seo": {
-   "title": "DPZMarketing — Strategia, creatività e tecnologia",
-   "description": "DPZMarketing: strategia, creatività e tecnologia per costruire ecosistemi digitali orientati alla crescita."
+   "title": "Dpzdigital — Strategia, creatività e tecnologia",
+   "description": "Dpzdigital: strategia, creatività e tecnologia per costruire ecosistemi digitali orientati alla crescita."
   },
   "nav": {
    "links": [
@@ -35,16 +48,16 @@
      "href": "#servizi"
     },
     {
-     "label": "Ecosistema",
-     "href": "#ecosistema"
+     "label": "Lavori",
+     "href": "#lavori"
+    },
+    {
+     "label": "Casi studio",
+     "href": "#casi-studio"
     },
     {
      "label": "Metodo",
      "href": "#metodo"
-    },
-    {
-     "label": "Risultati",
-     "href": "#numeri"
     }
    ],
    "cta": {
@@ -86,10 +99,10 @@
    "card_bottom_value": "+",
    "card_bottom_icon": "⌁",
    "scroll_hint": "SCOPRI IL SISTEMA",
-   "visual_label": "Ecosistema digitale DPZMarketing"
+   "visual_label": "Ecosistema digitale Dpzdigital"
   },
   "values": {
-   "kicker": "PERCHÉ DPZMARKETING",
+   "kicker": "PERCHÉ Dpzdigital",
    "title": "Competenze diverse.<br><em>Un’unica direzione.</em>",
    "text": "Non vendiamo singoli strumenti scollegati. Costruiamo un sistema coerente, progettato intorno agli obiettivi reali della tua azienda.",
    "items": [
@@ -230,7 +243,7 @@
   "wow": {
    "kicker": "OLTRE LA SINGOLA SOLUZIONE",
    "title": "Non ti serve “più marketing”.<br>Ti serve un sistema che <em>funziona.</em>",
-   "text": "DPZMarketing unisce creatività e tecnologia per trasformare punti scollegati in una crescita coordinata.",
+   "text": "Dpzdigital unisce creatività e tecnologia per trasformare punti scollegati in una crescita coordinata.",
    "button": {
     "label": "Costruisci il tuo progetto",
     "href": "#contatti",
@@ -290,8 +303,324 @@
   },
   "footer": {
    "tagline": "Strategia. Creatività. Tecnologia.",
-   "copyright": "© 2026 DPZMarketing"
-  }
+   "copyright": "© 2026 Dpzdigital"
+  },
+  "sections": [
+   {
+    "id": "hero",
+    "type": "hero"
+   },
+   {
+    "id": "values",
+    "type": "values"
+   },
+   {
+    "id": "services",
+    "type": "services"
+   },
+   {
+    "id": "b-siti",
+    "type": "showcase",
+    "data": {
+     "anchor": "lavori",
+     "kicker": "SITI WEB",
+     "title": "Esempi di <em>siti web.</em>",
+     "dark": false,
+     "text": "Un progetto reale e alcuni esempi creati per mostrarti cosa possiamo fare per la tua attività.",
+     "note": "Gli esempi riportano attività, nomi, prezzi e dati di fantasia: mostrano cosa possiamo creare per ogni settore.",
+     "items": [
+      {
+       "image": "assets/lavori/dpzdigital.jpg",
+       "badge": "Progetto reale",
+       "sector": "Agenzia digitale",
+       "title": "Il sito Dpzdigital",
+       "text": "Il sito che stai guardando: si modifica dal gestionale, riceve le richieste e risponde in automatico.",
+       "tags": [
+        "Sito web",
+        "Editor",
+        "Email automatica"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      },
+      {
+       "image": "assets/lavori/studio-dentistico.jpg",
+       "badge": "Esempio",
+       "sector": "Studio dentistico",
+       "title": "Sorriso Chiaro",
+       "text": "Cure, prezzi trasparenti e prenotazione della prima visita.",
+       "tags": [
+        "Sito web",
+        "Prenotazioni"
+       ],
+       "link": {
+        "label": "Guarda l’esempio",
+        "href": "esempi/studio-dentistico.html"
+       }
+      },
+      {
+       "image": "assets/lavori/palestra.jpg",
+       "badge": "Esempio",
+       "sector": "Palestra",
+       "title": "FORMA",
+       "text": "Corsi, abbonamenti e prova gratuita, con stile deciso.",
+       "tags": [
+        "Sito web",
+        "Abbonamenti"
+       ],
+       "link": {
+        "label": "Guarda l’esempio",
+        "href": "esempi/palestra.html"
+       }
+      },
+      {
+       "image": "assets/lavori/agriturismo.jpg",
+       "badge": "Esempio",
+       "sector": "Agriturismo",
+       "title": "Le Querce",
+       "text": "Camere, ristorante ed esperienze per chi cerca il soggiorno.",
+       "tags": [
+        "Sito web",
+        "Turismo"
+       ],
+       "link": {
+        "label": "Guarda l’esempio",
+        "href": "esempi/agriturismo.html"
+       }
+      },
+      {
+       "image": "assets/lavori/barberia.jpg",
+       "badge": "Esempio",
+       "sector": "Barberia",
+       "title": "Lama & Co.",
+       "text": "Servizi, listino e prenotazione online con promemoria.",
+       "tags": [
+        "Sito web",
+        "Prenotazione online"
+       ],
+       "link": {
+        "label": "Guarda l’esempio",
+        "href": "esempi/barberia.html"
+       }
+      },
+      {
+       "image": "assets/lavori/trattoria.jpg",
+       "badge": "Esempio",
+       "sector": "Ristorante",
+       "title": "Il Faro",
+       "text": "Menù del giorno, storia del locale e tavoli prenotabili.",
+       "tags": [
+        "Sito web",
+        "Ristorazione"
+       ],
+       "link": {
+        "label": "Guarda l’esempio",
+        "href": "esempi/trattoria.html"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "b-gest",
+    "type": "showcase",
+    "data": {
+     "anchor": "gestionali",
+     "kicker": "GESTIONALI",
+     "title": "Gestionali <em>su misura.</em>",
+     "dark": false,
+     "text": "Strumenti costruiti intorno al modo di lavorare di ogni attività, da usare dal telefono o dal computer.",
+     "note": "Gli esempi riportano attività, nomi, prezzi e dati di fantasia: mostrano cosa possiamo creare per ogni settore. Tutte le schermate usano dati di esempio.",
+     "items": [
+      {
+       "image": "assets/lavori/gestionale-dpzdigital.jpg",
+       "badge": "Progetto reale",
+       "sector": "Agenzia digitale",
+       "title": "Il gestionale Dpzdigital",
+       "text": "Clienti, preventivi, contratti, pagamenti, richieste dal sito e l’editor del sito web.",
+       "tags": [
+        "Gestionale",
+        "CRM",
+        "Editor sito"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      },
+      {
+       "image": "assets/lavori/gestionale-discoteca.jpg",
+       "badge": "Progetto reale",
+       "sector": "Discoteca e locale serale",
+       "title": "Serate, liste PR e ingressi",
+       "text": "Liste dei PR con QR, controllo degli ingressi dal telefono, foto delle serate e report.",
+       "tags": [
+        "Gestionale",
+        "QR",
+        "Sito collegato"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      },
+      {
+       "image": "assets/lavori/gestionale-ristorante.jpg",
+       "badge": "Esempio",
+       "sector": "Ristorante",
+       "title": "Prenotazioni e sala",
+       "text": "Tavoli, coperti e promemoria su WhatsApp ai clienti.",
+       "tags": [
+        "Prenotazioni",
+        "WhatsApp"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      },
+      {
+       "image": "assets/lavori/gestionale-palestra.jpg",
+       "badge": "Esempio",
+       "sector": "Palestra",
+       "title": "Iscritti e abbonamenti",
+       "text": "Scadenze, certificati, ingressi e rinnovi con link di pagamento.",
+       "tags": [
+        "Abbonamenti",
+        "Pagamenti"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      },
+      {
+       "image": "assets/lavori/gestionale-immobiliare.jpg",
+       "badge": "Esempio",
+       "sector": "Agenzia immobiliare",
+       "title": "Immobili e visite",
+       "text": "Annunci, richieste, agenda delle visite e abbinamenti con i clienti.",
+       "tags": [
+        "CRM",
+        "Agenda"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      },
+      {
+       "image": "assets/lavori/gestionale-estetica.jpg",
+       "badge": "Esempio",
+       "sector": "Centro estetico",
+       "title": "Agenda e pacchetti",
+       "text": "Appuntamenti per cabina, pacchetti a sedute e magazzino prodotti.",
+       "tags": [
+        "Agenda",
+        "Magazzino"
+       ],
+       "link": {
+        "label": "",
+        "href": ""
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "b-casi",
+    "type": "cases",
+    "data": {
+     "anchor": "casi-studio",
+     "kicker": "CASI STUDIO",
+     "title": "Problemi veri, <em>soluzioni concrete.</em>",
+     "dark": false,
+     "text": "Alcuni progetti seguiti per i nostri clienti. Per riservatezza non mostriamo i nomi.",
+     "items": [
+      {
+       "sector": "Discoteca e locale serale",
+       "title": "Serate, liste PR e ingressi in un’unica app",
+       "challenge": "Serate, liste dei PR e ingressi gestiti tra chat e messaggi: difficile sapere in tempo reale chi era in lista e chi era già entrato.",
+       "solution": "Abbiamo realizzato il sito del locale e un gestionale su misura: serate, liste dei PR con QR personale, controllo degli ingressi dal telefono, foto e report.",
+       "result": "Liste e ingressi in un solo strumento, usato dal telefono all’ingresso. Il sito si aggiorna da solo con le serate e le foto inserite nel gestionale.",
+       "tags": [
+        "Sito web",
+        "Gestionale su misura",
+        "QR"
+       ]
+      },
+      {
+       "sector": "Profumeria artigianale",
+       "title": "Un brand di nicchia, raccontato con costanza",
+       "challenge": "Un prodotto curato che online non veniva raccontato con continuità, e un negozio online da tenere sempre aggiornato.",
+       "solution": "Gestione dei social con piano editoriale, video e foto, negozio Shopify personalizzato e aggiornato ogni mese, gestionale interno per organizzare il lavoro.",
+       "result": "Una comunicazione costante e riconoscibile, e un negozio online coerente con l’immagine del brand.",
+       "tags": [
+        "Social",
+        "Video",
+        "Shopify",
+        "Gestionale"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "id": "ecosystem",
+    "type": "ecosystem"
+   },
+   {
+    "id": "method",
+    "type": "method"
+   },
+   {
+    "id": "numbers",
+    "type": "numbers"
+   },
+   {
+    "id": "wow",
+    "type": "wow"
+   },
+   {
+    "id": "b-team",
+    "type": "team",
+    "data": {
+     "anchor": "team",
+     "kicker": "IL TEAM",
+     "title": "Un team, <em>tutte le competenze.</em>",
+     "dark": false,
+     "text": "Un unico referente per te e professionisti dedicati per ogni area del progetto.",
+     "items": [
+      {
+       "icon": "↗",
+       "role": "Strategia e consulenza",
+       "text": "Analisi, obiettivi e piano d’azione per la crescita."
+      },
+      {
+       "icon": "⌘",
+       "role": "Sviluppo web e gestionali",
+       "text": "Siti, e-commerce, gestionali e automazioni su misura."
+      },
+      {
+       "icon": "◫",
+       "role": "Contenuti foto e video",
+       "text": "Shooting, reel e grafiche per i social e il sito."
+      },
+      {
+       "icon": "◎",
+       "role": "Social e advertising",
+       "text": "Gestione dei profili, campagne e analisi dei risultati."
+      }
+     ]
+    }
+   },
+   {
+    "id": "contact",
+    "type": "contact"
+   }
+  ]
  },
  "services": [
   {
@@ -306,7 +635,7 @@
     "text": "Strategia editoriale, pubblicazione e gestione coordinata di Instagram, TikTok e Facebook."
    },
    "seo": {
-    "title": "Gestione social | DPZMarketing",
+    "title": "Gestione social | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -422,7 +751,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "02-creazione-siti-web",
@@ -436,7 +765,7 @@
     "text": "Siti vetrina ed e-commerce veloci, eleganti e progettati per trasformare visite in contatti e vendite."
    },
    "seo": {
-    "title": "Creazione siti web | DPZMarketing",
+    "title": "Creazione siti web | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -552,7 +881,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "03-creazione-gestione-adv",
@@ -566,7 +895,7 @@
     "text": "Campagne Meta, Instagram e TikTok Ads: dalla creatività all’ottimizzazione delle conversioni."
    },
    "seo": {
-    "title": "Creazione e gestione ADV | DPZMarketing",
+    "title": "Creazione e gestione ADV | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -682,7 +1011,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "04-gestionali-aziendali",
@@ -696,7 +1025,7 @@
     "text": "Software e dashboard su misura per organizzare clienti, attività, dati e processi interni."
    },
    "seo": {
-    "title": "Gestionali aziendali | DPZMarketing",
+    "title": "Gestionali aziendali | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -812,7 +1141,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "05-foto-video-contenuti",
@@ -826,7 +1155,7 @@
     "text": "Produzioni visive, reel, shooting e contenuti pensati per valorizzare il brand e fermare lo scroll."
    },
    "seo": {
-    "title": "Foto, video e contenuti | DPZMarketing",
+    "title": "Foto, video e contenuti | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -942,7 +1271,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "06-branding",
@@ -956,7 +1285,7 @@
     "text": "Identità visiva, posizionamento e linguaggio per rendere il brand riconoscibile e coerente."
    },
    "seo": {
-    "title": "Branding | DPZMarketing",
+    "title": "Branding | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -1072,7 +1401,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "07-automazioni-chatbot",
@@ -1086,7 +1415,7 @@
     "text": "Flussi automatici, chatbot e CRM per acquisire lead, rispondere e lavorare in modo più efficiente."
    },
    "seo": {
-    "title": "Automazioni e chatbot | DPZMarketing",
+    "title": "Automazioni e chatbot | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -1202,7 +1531,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   },
   {
    "slug": "08-consulenza-marketing",
@@ -1216,7 +1545,7 @@
     "text": "Analisi, strategia e piano d’azione per trasformare obiettivi aziendali in priorità concrete."
    },
    "seo": {
-    "title": "Consulenza marketing | DPZMarketing",
+    "title": "Consulenza marketing | Dpzdigital",
     "description": ""
    },
    "nav_cta": "Parliamo del progetto ↗",
@@ -1332,7 +1661,7 @@
      "href": ""
     }
    },
-   "footer": "© 2026 DPZMarketing"
+   "footer": "© 2026 Dpzdigital"
   }
  ]
 }
