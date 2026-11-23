@@ -324,14 +324,14 @@
     "data": {
      "anchor": "lavori",
      "kicker": "SITI WEB",
-     "title": "Esempi di <em>siti web.</em>",
+     "title": "I nostri <em>siti web.</em>",
      "dark": false,
-     "text": "Un progetto reale e alcuni esempi creati per mostrarti cosa possiamo fare per la tua attività.",
+     "text": "Siti curati nel design, veloci e semplici da aggiornare.",
      "note": "Gli esempi riportano attività, nomi, prezzi e dati di fantasia: mostrano cosa possiamo creare per ogni settore.",
      "items": [
       {
        "image": "assets/lavori/dpzdigital.jpg",
-       "badge": "Progetto reale",
+       "badge": "",
        "sector": "Agenzia digitale",
        "title": "Il sito Dpzdigital",
        "text": "Il sito che stai guardando: si modifica dal gestionale, riceve le richieste e risponde in automatico.",
@@ -358,7 +358,8 @@
        "link": {
         "label": "Guarda l’esempio",
         "href": "esempi/studio-dentistico.html"
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/palestra.jpg",
@@ -373,7 +374,8 @@
        "link": {
         "label": "Guarda l’esempio",
         "href": "esempi/palestra.html"
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/agriturismo.jpg",
@@ -388,7 +390,8 @@
        "link": {
         "label": "Guarda l’esempio",
         "href": "esempi/agriturismo.html"
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/barberia.jpg",
@@ -403,7 +406,8 @@
        "link": {
         "label": "Guarda l’esempio",
         "href": "esempi/barberia.html"
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/trattoria.jpg",
@@ -418,7 +422,8 @@
        "link": {
         "label": "Guarda l’esempio",
         "href": "esempi/trattoria.html"
-       }
+       },
+       "hidden": true
       }
      ]
     }
@@ -436,7 +441,7 @@
      "items": [
       {
        "image": "assets/lavori/gestionale-dpzdigital.jpg",
-       "badge": "Progetto reale",
+       "badge": "",
        "sector": "Agenzia digitale",
        "title": "Il gestionale Dpzdigital",
        "text": "Clienti, preventivi, contratti, pagamenti, richieste dal sito e l’editor del sito web.",
@@ -452,7 +457,7 @@
       },
       {
        "image": "assets/lavori/gestionale-discoteca.jpg",
-       "badge": "Progetto reale",
+       "badge": "",
        "sector": "Discoteca e locale serale",
        "title": "Serate, liste PR e ingressi",
        "text": "Liste dei PR con QR, controllo degli ingressi dal telefono, foto delle serate e report.",
@@ -479,7 +484,8 @@
        "link": {
         "label": "",
         "href": ""
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/gestionale-palestra.jpg",
@@ -494,7 +500,8 @@
        "link": {
         "label": "",
         "href": ""
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/gestionale-immobiliare.jpg",
@@ -509,7 +516,8 @@
        "link": {
         "label": "",
         "href": ""
-       }
+       },
+       "hidden": true
       },
       {
        "image": "assets/lavori/gestionale-estetica.jpg",
@@ -524,7 +532,8 @@
        "link": {
         "label": "",
         "href": ""
-       }
+       },
+       "hidden": true
       }
      ]
     }

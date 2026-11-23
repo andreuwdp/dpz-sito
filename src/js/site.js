@@ -55,22 +55,24 @@ function contactForm() {
     btn.disabled = true
     const fd = new FormData(dpzForm)
     const payload = { name: fd.get('name'), email: fd.get('email'), phone: fd.get('phone'), message: fd.get('message'), botcheck: fd.get('botcheck') ? '1' : '', page: location.pathname.split('/').pop() || 'index.html' }
-    // 1) richiesta nel gestionale + email automatica a chi scrive  2) avviso a te via Web3Forms (come prima)
-    const toHub = cfg.supabaseUrl
-      ? fetch(`${cfg.supabaseUrl}/functions/v1/site-form`, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey }, body: JSON.stringify(payload) })
-        .then(async (r) => ({ ok: r.ok, data: await r.json().catch(() => ({})) })).catch(() => ({ ok: false, data: {} }))
-      : Promise.resolve({ ok: false, data: {} })
-    const toMail = fetch(dpzForm.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
-      .then(async (r) => ({ ok: r.ok, data: await r.json().catch(() => ({})) })).catch(() => ({ ok: false, data: {} }))
+    // la richiesta va nel gestionale: da lì parte l'avviso a info@dpzdigital.com e la risposta automatica a chi scrive.
+    // Web3Forms resta solo come riserva, se il gestionale non risponde.
+    const send = (url, opts) => fetch(url, opts).then(async (r) => ({ ok: r.ok, status: r.status, data: await r.json().catch(() => ({})) })).catch(() => ({ ok: false, status: 0, data: {} }))
     try {
-      const [hub, mail] = await Promise.all([toHub, toMail])
-      if (hub.ok || (mail.ok && mail.data.success)) {
+      let res = cfg.supabaseUrl
+        ? await send(`${cfg.supabaseUrl}/functions/v1/site-form`, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey }, body: JSON.stringify(payload) })
+        : { ok: false, status: 0, data: {} }
+      if (!res.ok && (res.status === 0 || res.status >= 500)) {
+        const backup = await send(dpzForm.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+        if (backup.ok && backup.data.success) res = backup
+      }
+      if (res.ok) {
         note.className = 'form-note ok'
         note.textContent = 'Richiesta inviata! Ti ricontattiamo entro 24 ore.'
         dpzForm.reset()
       } else {
         note.className = 'form-note err'
-        note.textContent = hub.data.error || mail.data.message || "Errore nell'invio. Riprova o scrivici su WhatsApp."
+        note.textContent = res.data.error || "Errore nell'invio. Riprova o scrivici su WhatsApp."
       }
     } finally {
       btn.disabled = false

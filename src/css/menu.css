@@ -19,3 +19,7 @@ body.dpz-open .dpz-drawer{transform:none;}
 .dpz-book{margin-top:24px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;background:linear-gradient(135deg,var(--t-green,#087653),var(--t-deep,#07523d));color:#fff !important;font-weight:700;padding:0 22px;border-radius:12px;font-size:14px;transition:transform .25s,box-shadow .25s;}
 .dpz-book:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(4,70,49,.28);}
 @media(max-width:1300px){.nav{display:none!important;}}
+
+.dpz-nav-sections{display:flex;flex-wrap:wrap;gap:8px;padding:16px 0 14px;border-bottom:1px solid rgba(255,255,255,.14);}
+.dpz-nav-sections a{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:14px;font-weight:600;color:#fff;transition:background .2s,color .2s;}
+.dpz-nav-sections a:hover{background:rgba(150,231,192,.16);color:var(--t-mint,#86e7b7);}

@@ -156,3 +156,14 @@
   .blk-case-steps { grid-template-columns: 1fr; gap: 16px; }
 }
 @media (max-width: 640px) { .blk-show-grid, .blk-roles { grid-template-columns: 1fr; } }
+
+/* elementi spenti dal gestionale (visibili solo in modifica) */
+.blk-off{opacity:.38;filter:grayscale(1);outline:2px dashed rgba(8,118,83,.35);outline-offset:4px}
+.blk-badge.blk-empty{display:none}
+.blk-show-grid.blk-n1{grid-template-columns:1fr}
+@media (min-width:900px){.blk-show-grid.blk-n1 .blk-work{display:grid;grid-template-columns:1.35fr 1fr;align-items:stretch}.blk-show-grid.blk-n1 .blk-work-copy{display:flex;flex-direction:column;justify-content:center;padding:40px}.blk-show-grid.blk-n1 .blk-work-copy h3{font-size:30px}}
+.blk-show-grid.blk-n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.blk-show-grid.blk-n2{grid-template-columns:1fr}}
+
+.contact-legal{margin-top:22px;font-size:13px;line-height:1.5;color:var(--t-muted,#617970);font-weight:600}
+.footer-legal{font-size:12px}
