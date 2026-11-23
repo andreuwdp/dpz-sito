@@ -56,12 +56,14 @@ function contactForm() {
     const fd = new FormData(dpzForm)
     const payload = { name: fd.get('name'), email: fd.get('email'), phone: fd.get('phone'), message: fd.get('message'), botcheck: fd.get('botcheck') ? '1' : '', page: location.pathname.split('/').pop() || 'index.html' }
     // la richiesta va nel gestionale: da lì parte l'avviso a info@dpzdigital.com e la risposta automatica a chi scrive.
-    // Web3Forms resta solo come riserva, se il gestionale non risponde.
+    // Web3Forms resta solo come riserva, se il gestionale o la casella email non rispondono.
     const send = (url, opts) => fetch(url, opts).then(async (r) => ({ ok: r.ok, status: r.status, data: await r.json().catch(() => ({})) })).catch(() => ({ ok: false, status: 0, data: {} }))
     try {
       let res = cfg.supabaseUrl
         ? await send(`${cfg.supabaseUrl}/functions/v1/site-form`, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: cfg.supabaseKey }, body: JSON.stringify(payload) })
         : { ok: false, status: 0, data: {} }
+      // se l'avviso da info@ non è partito (casella non raggiungibile), arriva comunque tramite Web3Forms
+      if (res.ok && res.data.notified === false) send(dpzForm.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
       if (!res.ok && (res.status === 0 || res.status >= 500)) {
         const backup = await send(dpzForm.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
         if (backup.ok && backup.data.success) res = backup
