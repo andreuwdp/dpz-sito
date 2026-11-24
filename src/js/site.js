@@ -110,7 +110,8 @@ function setLook(c) {
   let fl = document.getElementById('dpz-fonts')
   if (url) {
     if (!fl) { fl = document.createElement('link'); fl.id = 'dpz-fonts'; fl.rel = 'stylesheet'; document.head.insertBefore(fl, document.getElementById('page-css')) }
-    if (fl.getAttribute('href') !== url) fl.setAttribute('href', url)
+    // stesso font già ospitato sul sito: resta quello; altrimenti (font appena cambiato) si usa Google Fonts
+    if (fl.dataset.for !== url && fl.getAttribute('href') !== url) { fl.setAttribute('href', url); delete fl.dataset.for }
   } else if (fl) fl.remove()
   const fav = faviconOf(c)
   for (const rel of ['icon', 'apple-touch-icon']) {

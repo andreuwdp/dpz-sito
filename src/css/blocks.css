@@ -167,3 +167,21 @@
 
 .contact-legal{margin-top:22px;font-size:13px;line-height:1.5;color:var(--t-muted,#617970);font-weight:600}
 .footer-legal{font-size:12px}
+
+/* link legali e social in fondo alle pagine */
+footer{flex-wrap:wrap}
+.footer-links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;font-weight:600}
+.footer-links a{color:var(--t-sec,#617970);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.footer-links a:hover{color:var(--t-green,#087653);border-color:currentColor}
+.form-privacy{margin:10px 0 0;font-size:12px;line-height:1.5;color:var(--t-sec,#617970)}
+.form-privacy a{color:var(--t-green,#087653);text-decoration:underline}
+
+/* pagine privacy e cookie */
+.legal-page{max-width:820px;margin:0 auto;padding:150px max(6vw,24px) 90px;color:var(--t-ink,#06271d);font-size:16px;line-height:1.75}
+.legal-page h1{margin:14px 0 6px;font-size:clamp(40px,6vw,64px);line-height:1;letter-spacing:-.04em}
+.legal-page h2{margin:42px 0 10px;font-size:22px;letter-spacing:-.01em}
+.legal-page p,.legal-page li{color:var(--t-sec,#3d564d)}
+.legal-page ul{padding-left:20px}.legal-page li{margin:6px 0}
+.legal-page a{color:var(--t-green,#087653);text-decoration:underline}
+.legal-back{font-size:14px;font-weight:700;text-decoration:none!important}
+.legal-updated{margin:0 0 30px;font-size:13px;color:var(--t-sec,#71867e)!important}

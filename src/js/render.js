@@ -171,9 +171,9 @@ export function renderHome(c, opts = {}) {
       + `<a class="contact-method wa" href="${waHref(co.whatsapp)}" target="_blank" rel="noopener"${h.panel('contacts')}><span class="cm-ico"><svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.8L.5 31.5l7.9-2c2.3 1.2 4.9 1.9 7.6 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.2 5.9-13.1 13.1-13.1S29.1 8.8 29.1 16 23.2 28.8 16 28.8zm7.2-9.8c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg></span><span class="cm-txt">${h.w('home.contact.wa_label', ct.wa_label)}<small>${esc(co.phone)} · ${h.w('home.contact.wa_note', ct.wa_note)}</small></span></a>`
       + `<a class="contact-method" href="${telHref(co.phone)}"${h.panel('contacts')}><span class="cm-ico">&#9742;</span><span class="cm-txt">${h.w('home.contact.call_label', ct.call_label)}<small>${esc(co.phone)}</small></span></a>`
       + `<a class="contact-method" href="mailto:${esc(co.email)}"${h.panel('contacts')}><span class="cm-ico">&#9993;</span><span class="cm-txt">${h.w('home.contact.mail_label', ct.mail_label)}<small>${esc(co.email)}</small></span></a></div>${g.legal ? `<p class="contact-legal">${esc(g.legal)}</p>` : ''}</div>`
-      + `<form class="contact-form" id="dpzForm" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="${esc(g.form.access_key)}"><input type="hidden" name="subject" value="${esc(g.form.subject)}"><input type="hidden" name="from_name" value="${esc(g.form.from_name)}"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off"><h3${h.k('home.contact.form_title')}>${esc(ct.form_title)}</h3>${fieldE('name', 'text', 'name', true)}${fieldE('email', 'email', 'email', true)}${fieldE('phone', 'tel', 'phone', false)}${fieldE('msg', 'textarea', 'message', true)}<button class="button primary" type="submit">${h.w('home.contact.form_button', ct.form_button)} <span>&#8599;</span></button><p class="form-note" id="dpzFormNote"${h.k('home.contact.form_note')}>${esc(ct.form_note)}</p></form></div></section>`,
+      + `<form class="contact-form" id="dpzForm" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="${esc(g.form.access_key)}"><input type="hidden" name="subject" value="${esc(g.form.subject)}"><input type="hidden" name="from_name" value="${esc(g.form.from_name)}"><input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off"><h3${h.k('home.contact.form_title')}>${esc(ct.form_title)}</h3>${fieldE('name', 'text', 'name', true)}${fieldE('email', 'email', 'email', true)}${fieldE('phone', 'tel', 'phone', false)}${fieldE('msg', 'textarea', 'message', true)}<button class="button primary" type="submit">${h.w('home.contact.form_button', ct.form_button)} <span>&#8599;</span></button><p class="form-note" id="dpzFormNote"${h.k('home.contact.form_note')}>${esc(ct.form_note)}</p><p class="form-privacy">Inviando la richiesta dichiari di aver letto l’<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.</p></form></div></section>`,
   }
-  return nav + sectionsHtml(c, 'home', S, h, opts) + `<footer><a class="brand footer-brand" href="#home">${logo('brand-logo footer-logo')}</a><p${h.k('home.footer.tagline')}>${esc(p.footer.tagline)}</p><span>${h.w('home.footer.copyright', p.footer.copyright)}${legal(c, h)}</span></footer></main>`
+  return nav + sectionsHtml(c, 'home', S, h, opts) + `<footer><a class="brand footer-brand" href="#home">${logo('brand-logo footer-logo')}</a><p${h.k('home.footer.tagline')}>${esc(p.footer.tagline)}</p><span>${h.w('home.footer.copyright', p.footer.copyright)}${legal(c, h)}</span>${footLinks(c)}</footer></main>`
 }
 
 export function renderService(c, i, opts = {}) {
@@ -191,10 +191,51 @@ export function renderService(c, i, opts = {}) {
     outcomes: () => `<section class="outcomes"><div class="heading reveal"><span class="kicker"${h.k(`${P}.outcomes.kicker`)}>${esc(s.outcomes.kicker)}</span><h2${h.k(`${P}.outcomes.title`, 'rich')}>${rich(s.outcomes.title)}</h2><p${h.k(`${P}.outcomes.text`)}>${esc(s.outcomes.text)}</p></div><div class="cards"${h.list(`${P}.outcomes.cards`)}>${s.outcomes.cards.map((x, j) => `<div class="card reveal"${h.item(`${P}.outcomes.cards`, j)}><span${h.k(`${P}.outcomes.cards.${j}.num`)}>${esc(x.num)}</span><b${h.k(`${P}.outcomes.cards.${j}.title`)}>${esc(x.title)}</b></div>`).join('')}</div></section>`,
     contact: () => `<section class="contact" id="contatti"><div><span class="kicker"${h.k(`${P}.contact.kicker`)}>${esc(s.contact.kicker)}</span><h2${h.k(`${P}.contact.title`, 'rich')}>${rich(s.contact.title)}</h2></div><a class="circle" href="${esc(s.contact.button.href || `mailto:${g.contacts.email}`)}"${h.href(`${P}.contact.button`)}${h.k(`${P}.contact.button.label`)}>${esc(s.contact.button.label)}</a></section>`,
   }
-  return nav + sectionsHtml(c, s.slug, S, h, opts) + `<footer>${logo}<span>${h.w(`${P}.footer`, s.footer)}${legal(c, h)}</span></footer>`
+  return nav + sectionsHtml(c, s.slug, S, h, opts) + `<footer>${logo}<span>${h.w(`${P}.footer`, s.footer)}${legal(c, h)}</span>${footLinks(c)}</footer>`
 }
 
 export const faviconOf = (c) => c.global.favicon || ''
+
+/* ---------- social e pagine legali ---------- */
+export const SOCIALS = [['instagram', 'Instagram'], ['facebook', 'Facebook'], ['tiktok', 'TikTok'], ['linkedin', 'LinkedIn'], ['youtube', 'YouTube']]
+const safeUrl = (u) => (/^https:\/\/[^\s"'<>]+$/i.test(String(u || '').trim()) ? String(u).trim() : '')
+export function socialLinks(c) {
+  const so = c.global.social || {}
+  return SOCIALS.filter(([k]) => safeUrl(so[k])).map(([k, label]) => ({ key: k, label, href: safeUrl(so[k]) }))
+}
+function footLinks(c) {
+  const so = socialLinks(c).map((x) => `<a href="${esc(x.href)}" target="_blank" rel="noopener me">${esc(x.label)}</a>`).join('')
+  return `<nav class="footer-links" aria-label="Informazioni legali e social"><a href="privacy.html">Privacy policy</a><a href="cookie.html">Cookie policy</a>${so}</nav>`
+}
+
+// Pagine legali: testo semplice con "## titolo", "- elenco" e righe vuote tra i paragrafi.
+export const LEGAL_PAGES = ['privacy', 'cookie']
+function legalText(t, c) {
+  const g = c.global; const o = g.org || {}
+  const vars = { '{titolare}': o.founder || '', '{piva}': String(o.vat || '').replace(/^IT/, ''), '{citta}': [o.city, o.region && `(${o.region})`].filter(Boolean).join(' '), '{email}': g.contacts.email, '{telefono}': g.contacts.phone, '{marchio}': g.logo_alt }
+  const fill = (x) => esc(Object.entries(vars).reduce((a, [k, v]) => a.replaceAll(k, v), x))
+  const inline = (x) => fill(x).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+|mailto:[^)\s]+|[a-z-]+\.html)\)/g, '<a href="$2">$1</a>')
+  const out = []; let list = null; let para = []
+  const flush = () => { if (para.length) out.push(`<p>${para.map(inline).join('<br>')}</p>`); para = []; if (list) out.push(`<ul>${list.join('')}</ul>`); list = null }
+  for (const raw of String(t || '').split('\n')) {
+    const l = raw.trim()
+    if (!l) { flush(); continue }
+    if (l.startsWith('## ')) { flush(); out.push(`<h2>${inline(l.slice(3))}</h2>`); continue }
+    if (l.startsWith('- ')) { if (para.length) { out.push(`<p>${para.map(inline).join('<br>')}</p>`); para = [] } (list ||= []).push(`<li>${inline(l.slice(2))}</li>`); continue }
+    if (list) flush()
+    para.push(l)
+  }
+  flush()
+  return out.join('')
+}
+export function renderLegal(c, key, opts = {}) {
+  const h = helpers(opts.edit, c); const g = c.global
+  const d = (c.legal_pages || {})[key] || { title: 'Pagina non trovata', body: '' }
+  const logo = `<img src="${esc(g.logo)}" alt="${esc(g.logo_alt)}">`
+  return `<nav class="nav"><a href="index.html">${logo}</a><a href="index.html#contatti">Contattaci</a></nav>`
+    + `<main class="legal-page"><a class="legal-back" href="index.html">← Torna al sito</a><h1>${esc(d.title)}</h1>${d.updated ? `<p class="legal-updated">Ultimo aggiornamento: ${esc(d.updated)}</p>` : ''}<div class="legal-body">${legalText(d.body, c)}</div></main>`
+    + `<footer>${logo}<span>${legal(c, h)}</span>${footLinks(c)}</footer>`
+}
 
 // Dati dell'attività in fondo a ogni pagina (obbligatori per legge sul sito di un'attività)
 function legal(c, h) {
@@ -221,12 +262,13 @@ export function orgJsonLd(c, url) {
 // Titolo e descrizione della pagina (SEO)
 export function pageMeta(c, page) {
   if (page === 'home') return c.home.seo
+  if (LEGAL_PAGES.includes(page)) { const d = (c.legal_pages || {})[page] || {}; return { title: `${d.title || 'Informazioni'} | ${c.global.logo_alt}`, description: d.description || '' } }
   const s = c.services.find((x) => x.slug === page)
   return s ? s.seo : { title: 'Pagina non trovata | Dpzdigital', description: '' }
 }
 
 export function renderBody(c, page, opts = {}) {
-  const body = page === 'home' ? renderHome(c, opts) : renderService(c, c.services.findIndex((x) => x.slug === page), opts)
+  const body = page === 'home' ? renderHome(c, opts) : LEGAL_PAGES.includes(page) ? renderLegal(c, page, opts) : renderService(c, c.services.findIndex((x) => x.slug === page), opts)
   return renderMenu(c, { ...opts, page }) + (page === 'home' ? '\n' : '\n  ') + body
 }
 
@@ -261,7 +303,7 @@ export const BLOCKS = {
       { quote: 'Professionali e veloci: in poche settimane abbiamo visto i primi risultati.', name: 'Nome Cognome', role: 'Titolare, Azienda' },
       { quote: 'Finalmente un unico partner che segue tutto, dal sito ai social.', name: 'Nome Cognome', role: 'Marketing, Azienda' },
       { quote: 'Chiari in ogni fase e sempre disponibili. Li consiglio.', name: 'Nome Cognome', role: 'Fondatrice, Azienda' }], dark: true }),
-    render: (d, P, h) => `<section class="blk blk-quotes${d.dark ? ' blk-dark' : ''}"><div class="blk-wrap"><div class="blk-head reveal">${head(d, P, h)}</div><div class="blk-cards"${h.list(`${P}.items`)}>${arr(d.items).map((x, j) => `<figure class="blk-quote reveal"${h.item(`${P}.items`, j)}><blockquote${h.k(`${P}.items.${j}.quote`)}>${esc(x.quote)}</blockquote><figcaption><b${h.k(`${P}.items.${j}.name`)}>${esc(x.name)}</b><span${h.k(`${P}.items.${j}.role`)}>${esc(x.role)}</span></figcaption></figure>`).join('')}</div></div></section>`,
+    render: (d, P, h) => `<section class="blk blk-quotes${d.dark ? ' blk-dark' : ''}"><div class="blk-wrap"><div class="blk-head reveal">${head(d, P, h)}</div><div class="blk-cards"${h.list(`${P}.items`)}>${arr(d.items).map((x, j) => off(x, h) ? '' : `<figure class="blk-quote reveal${offCls(x)}"${h.item(`${P}.items`, j)}><blockquote${h.k(`${P}.items.${j}.quote`)}>${esc(x.quote)}</blockquote><figcaption><b${h.k(`${P}.items.${j}.name`)}>${esc(x.name)}</b><span${h.k(`${P}.items.${j}.role`)}>${esc(x.role)}</span></figcaption></figure>`).join('')}</div></div></section>`,
   },
   faq: {
     label: 'Domande frequenti', icon: '?', desc: 'Domande e risposte apri/chiudi',

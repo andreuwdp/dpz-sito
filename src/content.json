@@ -34,6 +34,13 @@
    "same_as": [
     "https://www.instagram.com/_dpzdigital_/"
    ]
+  },
+  "social": {
+   "instagram": "https://www.instagram.com/_dpzdigital_/",
+   "facebook": "",
+   "tiktok": "",
+   "linkedin": "",
+   "youtube": ""
   }
  },
  "home": {
@@ -1672,5 +1679,19 @@
    },
    "footer": "© 2026 Dpzdigital"
   }
- ]
+ ],
+ "legal_pages": {
+  "privacy": {
+   "title": "Privacy policy",
+   "updated": "24 novembre 2026",
+   "description": "Informativa sul trattamento dei dati personali di dpzdigital.com.",
+   "body": "Questa informativa spiega come {marchio} tratta i dati personali di chi visita il sito dpzdigital.com e di chi ci scrive tramite il modulo di contatto, ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (GDPR).\n\n## Titolare del trattamento\n**{marchio}** di {titolare}, ditta individuale, P.IVA {piva}, con sede a {citta}.\nPer qualsiasi richiesta sulla privacy puoi scrivere a [{email}](mailto:{email}).\n\n## Quali dati trattiamo\n- **Dati che ci invii con il modulo di contatto:** nome, email, telefono (facoltativo) e il testo del messaggio.\n- **Dati che ci invii scrivendoci direttamente** via email, telefono o WhatsApp.\n- **Dati tecnici di navigazione:** i server che ospitano il sito registrano in automatico alcune informazioni necessarie al funzionamento e alla sicurezza (ad esempio indirizzo IP, data e ora della richiesta, pagina visitata, tipo di browser). Questi dati non vengono usati per identificarti.\n- Per proteggere il modulo da invii ripetuti e dallo spam conserviamo una versione cifrata e non reversibile del tuo indirizzo IP.\n\nIl sito non usa strumenti di analisi delle visite, pixel pubblicitari o cookie di profilazione.\n\n## Perché trattiamo i dati e su quale base\n- **Rispondere alla tua richiesta** e, se lo chiedi, preparare un preventivo: misure precontrattuali richieste da te (art. 6.1.b GDPR).\n- **Inviarti un'email automatica di conferma** che abbiamo ricevuto la richiesta: stessa base giuridica.\n- **Gestire il rapporto con i clienti** e rispettare gli obblighi fiscali e contabili: esecuzione del contratto e obblighi di legge (art. 6.1.b e 6.1.c GDPR).\n- **Sicurezza del sito e prevenzione degli abusi:** legittimo interesse del titolare (art. 6.1.f GDPR).\n\nNon usiamo i tuoi dati per newsletter o pubblicità senza un tuo consenso specifico, e non li vendiamo a nessuno.\n\n## Conferimento dei dati\nNome, email e messaggio sono necessari per poterti rispondere: senza questi dati il modulo non può essere inviato. Il telefono è facoltativo.\n\n## Per quanto tempo li conserviamo\n- Le richieste di contatto che non diventano un incarico: fino a 24 mesi dall'ultimo contatto, poi vengono cancellate.\n- I dati dei clienti: per tutta la durata del rapporto e poi per il tempo richiesto dalla legge per i documenti fiscali e contabili (di norma 10 anni).\n- I dati tecnici di navigazione: per il tempo stabilito dai fornitori dell'hosting, di norma pochi giorni o settimane.\n\n## Chi tratta i dati per nostro conto\nI dati sono gestiti da {titolare} e, se necessario, dai collaboratori autorizzati e tenuti alla riservatezza. Usiamo inoltre questi fornitori, nominati responsabili del trattamento:\n- **Supabase** (database e invio delle richieste, server nell'Unione Europea, Francoforte);\n- **IONOS** (casella email {email}, server nell'Unione Europea);\n- **Netlify** (hosting del sito, società con sede negli Stati Uniti);\n- **Vercel** (hosting del gestionale interno in cui leggiamo le richieste, società con sede negli Stati Uniti);\n- **Web3Forms** (servizio di inoltro email usato solo come riserva, se il nostro sistema non risponde).\n\nAlcuni di questi fornitori possono trattare dati fuori dall'Unione Europea. In questi casi il trasferimento avviene con le garanzie previste dal GDPR, come l'EU-US Data Privacy Framework o le clausole contrattuali standard approvate dalla Commissione Europea.\n\nSe ci contatti tramite WhatsApp, i dati sono trattati anche da WhatsApp/Meta secondo la sua informativa.\n\nI dati non vengono diffusi. Possono essere comunicati alle autorità solo se previsto dalla legge.\n\n## I tuoi diritti\nIn qualsiasi momento puoi chiedere di accedere ai tuoi dati, correggerli, cancellarli, limitarne il trattamento, riceverli in un formato leggibile (portabilità) e opporti al trattamento basato sul legittimo interesse (articoli 15-22 GDPR). Basta scrivere a [{email}](mailto:{email}): ti rispondiamo entro 30 giorni.\n\nSe ritieni che il trattamento non sia corretto puoi presentare reclamo al Garante per la protezione dei dati personali ([www.garanteprivacy.it](https://www.garanteprivacy.it)).\n\n## Cookie\nPer sapere come il sito usa cookie e tecnologie simili leggi la [cookie policy](cookie.html).\n\n## Modifiche\nPotremmo aggiornare questa informativa, ad esempio se cambiano i servizi che usiamo. La data dell'ultimo aggiornamento è indicata in alto."
+  },
+  "cookie": {
+   "title": "Cookie policy",
+   "updated": "24 novembre 2026",
+   "description": "Come dpzdigital.com usa cookie e tecnologie simili.",
+   "body": "Questa pagina spiega se e come dpzdigital.com usa cookie e tecnologie simili.\n\n## In breve\nIl sito **non usa cookie di profilazione, pubblicitari o di analisi** e non installa cookie di terze parti. Per questo non ti chiediamo il consenso con un banner: le regole italiane (Provvedimento del Garante dell'8 maggio 2014 e Linee guida del 10 giugno 2021) lo richiedono solo per i cookie di profilazione e per quelli di terze parti non tecnici.\n\n## Cosa succede quando visiti il sito\n- **Nessun cookie** viene salvato dal sito nella navigazione normale.\n- I **caratteri tipografici** sono ospitati sul nostro stesso sito: il tuo browser non contatta servizi esterni come Google Fonts.\n- I **contenuti** delle pagine vengono letti dal nostro database (Supabase, server nell'Unione Europea) senza salvare cookie e senza identificarti.\n- Quando **invii il modulo di contatto**, i dati che scrivi vengono trasmessi al nostro database: trovi tutti i dettagli nell'[informativa privacy](privacy.html).\n\n## Link verso altri siti\nI pulsanti di WhatsApp e i link ai nostri profili social portano su siti esterni, che possono usare i propri cookie secondo le loro informative. Nessun contenuto di questi servizi viene caricato finché non tocchi il link.\n\n## Come gestire i cookie dal browser\nPuoi comunque cancellare o bloccare i cookie dalle impostazioni del tuo browser (Chrome, Safari, Firefox, Edge): le istruzioni sono nella guida di ogni browser.\n\n## Modifiche\nSe in futuro aggiungeremo strumenti che usano cookie non tecnici (ad esempio statistiche o pubblicità), aggiorneremo questa pagina e ti chiederemo il consenso prima di attivarli.\n\nPer domande scrivi a [{email}](mailto:{email})."
+  }
+ }
 }
