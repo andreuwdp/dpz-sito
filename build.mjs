@@ -70,6 +70,8 @@ function page(slug, file) {
   const extra = [
     fav ? `<link rel="icon" href="${esc(fav)}">\n  <link rel="apple-touch-icon" href="${esc(fav)}">` : '',
     `<meta property="og:type" content="website">\n  <meta property="og:site_name" content="${esc(c.global.logo_alt)}">\n  <meta property="og:title" content="${esc(meta.title)}">${meta.description ? `\n  <meta property="og:description" content="${esc(meta.description)}">` : ''}\n  <meta property="og:url" content="${esc(url)}">${og ? `\n  <meta property="og:image" content="${esc(abs(og))}">` : ''}\n  <meta name="twitter:card" content="summary_large_image">`,
+    file !== 'servizio.html' ? `<link rel="canonical" href="${esc(url)}">` : '<meta name="robots" content="noindex">',
+    isHome && c.global.google_verification ? `<meta name="google-site-verification" content="${esc(String(c.global.google_verification).replace(/[^\w-]/g, ''))}">` : '',
     isHome ? `<script type="application/ld+json">${orgJsonLd(c, SITE)}</script>` : '',
     fonts ? `${localFonts ? '' : '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n  '}<link rel="stylesheet" id="dpz-fonts" href="${esc(fonts)}" data-for="${esc(googleFontsUrl(c))}">` : '',
   ].filter(Boolean).join('\n  ')
@@ -106,6 +108,22 @@ for (const s of c.services) await writeFile(`dist/${s.slug}.html`, page(s.slug, 
 // pagine servizio create dopo l'ultima pubblicazione: le disegna il browser leggendo l'indirizzo
 await writeFile('dist/servizio.html', page('*', 'servizio.html'))
 await writeFile('dist/content.json', JSON.stringify(c))
+
+// Mappa del sito e robots.txt per Google (le pagine di esempio e le pagine tecniche restano fuori)
+const today = new Date().toISOString().slice(0, 10)
+const urls = [['', '1.0'], ...c.services.map((s) => [`${s.slug}.html`, '0.8'])]
+await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(([u, pr]) => `  <url><loc>${SITE}/${u}</loc><lastmod>${today}</lastmod><priority>${pr}</priority></url>`).join('\n')}
+</urlset>
+`)
+await writeFile('dist/robots.txt', `User-agent: *
+Allow: /
+Disallow: /servizio.html
+Disallow: /content.json
+
+Sitemap: ${SITE}/sitemap.xml
+`)
 
 // Netlify: indirizzi senza file (es. un servizio creato dopo l'ultima pubblicazione) → servizio.html, che lo disegna dai contenuti dal vivo
 await writeFile('dist/_redirects', '/*  /servizio.html  404\n')
